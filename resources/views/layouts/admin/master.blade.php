@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login</title>
+	<title>Login V1</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="{{ asset('admin/images/icons/favicon.ico')}} ">
+	<link rel="icon" type="image/png" href="{{ asset('admin/images/icons/favicon.ico')}}"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ asset('admin/vendor/bootstrap/css/bootstrap.min.css')}}">
 <!--===============================================================================================-->
@@ -28,9 +28,8 @@
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="{{ asset('admin/images/img-01.png')}}" alt="IMG">
-                    @yield('content')
 				</div>
-
+			@yield('content')
 
 			</div>
 		</div>
@@ -48,7 +47,7 @@
 	<script src="{{ asset('admin/vendor/select2/select2.min.js')}}"></script>
 <!--===============================================================================================-->
 	<script src="{{ asset('admin/vendor/tilt/tilt.jquery.min.js')}}"></script>
-	<script>
+	<script >
 		$('.js-tilt').tilt({
 			scale: 1.1
 		})

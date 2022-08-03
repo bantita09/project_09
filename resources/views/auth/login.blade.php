@@ -1,7 +1,7 @@
 @extends('layouts.admin.master')
 @section('content')
-                <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
-                @csrf
+				<form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
+					@csrf
 					<span class="login100-form-title">
 						Member Login
 					</span>
@@ -38,7 +38,7 @@
 					</div>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="#">
+						<a class="txt2" href="{{ route('register') }}">
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
