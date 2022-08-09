@@ -12,11 +12,3 @@
     <link rel="stylesheet" href="{{ asset('template/admin/assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('template/admin/assets/css/app.css') }}">
     <link rel="shortcut icon" href="{{ asset('template/admin/assets/images/favicon.svg') }}" type="image/x-icon">
-
-    <script src="{{ asset('template/admin/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-    <script src="{{ asset('template/admin/assets/js/bootstrap.bundle.min.js') }}"></script>
-
-    <script src="{{ asset('template/admin/assets/vendors/apexcharts/apexcharts.js') }}"></script>
-    <script src="{{ asset('template/admin/assets/js/pages/dashboard.js') }}"></script>
-
-    <script src="{{ asset('template/admin/assets/js/pages/dashboard.js') }}"></script>
