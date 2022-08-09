@@ -5,7 +5,7 @@
     <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
         <div class="row">
             <div class="col-lg-8">
-                <h1>House <span>Blend</span></h1>
+                <h1>Beverage <span>Menu</span></h1>
             </div>
         </div>
     </div>
@@ -20,10 +20,19 @@
             <div class="row">
 
                 <div class="col-6">
+                    <div class="card" style="width: 18rem;">
+                        <img src="assets/img/house-blend/HB-01.png" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="{{asset('template/promote/assets/img/house-blend/HB-01.png')}}" class="img-fluid rounded-start" alt="">
+                                <img src="assets/img/House Blend/HB-01.png" class="img-fluid rounded-start" alt="">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -40,7 +49,7 @@
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="{{asset('template/promote/assets/img/house-blend/HB-02.png')}}" class="img-fluid rounded-start" alt="">
+                                <img src="assets/img/House Blend/HB-01.png" class="img-fluid rounded-start" alt="">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -57,7 +66,7 @@
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="{{asset('template/promote/assets/img/house-blend/HB-03.png')}}" class="img-fluid rounded-start" alt="">
+                                <img src="assets/img/House Blend/HB-01.png" class="img-fluid rounded-start" alt="">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -74,7 +83,7 @@
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="{{asset('template/promote/assets/img/house-blend/HB-04.png')}}" class="img-fluid rounded-start" alt="">
+                                <img src="assets/img/House Blend/HB-01.png" class="img-fluid rounded-start" alt="">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -91,28 +100,11 @@
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="{{asset('template/promote/assets/img/house-blend/HB-05.png')}}" class="img-fluid rounded-start" alt="">
+                                <img src="assets/img/House Blend/HB-01.png" class="img-fluid rounded-start" alt="">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">Hint House Blend : Black</h5>
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                                    <a href="#" class="btn btn-primary">Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="{{asset('template/promote/assets/img/house-blend/HB-06.png')}}" class="img-fluid rounded-start" alt="">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Hint house-blend : Black</h5>
                                     <a href="#" class="btn btn-primary">Add to Cart</a>
                                     <a href="#" class="btn btn-primary">Detail</a>
                                 </div>

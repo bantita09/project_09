@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'promotepage.home')->name('home');
 Route::view('/house-blend', 'promotepage.house-blend')->name('house-blend');
+Route::view('/single-origin', 'promotepage.single-origin')->name('single-origin');
+Route::view('/beverage-menu', 'promotepage.beverage-menu')->name('beverage-menu');
 
 // End Promote
 
@@ -33,6 +35,6 @@ Auth::routes();
 // Route::view('/', 'promotepage.home')->name('home');
 // Route::view('/admin/home', 'adminpage.adminhome')->name('adminhome');
 
-Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('adminpage.adminhome');
+// Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('adminpage.adminhome');
 
 // End Admin

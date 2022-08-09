@@ -7,15 +7,17 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="house-blend.php">House Blend</a></li>
-          <li><a class="nav-link scrollto" href="single-origin.php">Single Orgin</a></li>
-          <li><a class="nav-link scrollto" href="beverage.php">Beverage Menu</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/house-blend')}}">House Blend</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/single-origin')}}">Single Orgin</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/beverage-menu')}}">Beverage Menu</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/contact')}}">Contact</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/login')}}">Login</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/register')}}">Register</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-      <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a>
+      <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Cart</a>
 
     </div>
   </header>
