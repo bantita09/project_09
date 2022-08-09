@@ -12,9 +12,25 @@
           <li><a class="nav-link scrollto" href="{{url('/single-origin')}}">Single Orgin</a></li>
           <li><a class="nav-link scrollto" href="{{url('/beverage-menu')}}">Beverage Menu</a></li>
           <li><a class="nav-link scrollto" href="{{url('/contact')}}">Contact</a></li>
-          <li><a class="nav-link scrollto" href="{{url('/login')}}">Login</a></li>
-          <li><a class="nav-link scrollto" href="{{url('/register')}}">Register</a></li>
+
+          @if (Route::has('login'))
+                    @auth
+                        <li><a class="nav-link scrollto" href="{{ url('/admin/home') }}" >Admin</a></li>
+          @else
+
+                      <li><a class="nav-link scrollto" href="{{ route('login') }}" >Log in</a></li>
+
+              @if (Route::has('register'))
+
+                        <li><a class="nav-link scrollto" href="{{ route('register') }}" >Register</a></li>
+
+              @endif
+
+                    @endauth
+            @endif
+
         </ul>
+
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
       <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Cart</a>
