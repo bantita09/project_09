@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Start Promote
+
+Route::view('/', 'promotepage.home')->name('home');
+Route::view('/house-blend', 'promotepage.house-blend')->name('house-blend');
+
+// End Promote
+
+// Start Admin
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::view('/', 'promotepage.home')->name('home');
 // Route::view('/admin/home', 'adminpage.adminhome')->name('adminhome');
+
+Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('adminpage.adminhome');
+
+// End Admin
