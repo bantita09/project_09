@@ -14,4 +14,4 @@
                 <script src="{{ asset('template/admin/assets/vendors/apexcharts/apexcharts.js') }}"></script>
                 <script src="{{ asset('template/admin/assets/js/pages/dashboard.js') }}"></script>
 
-                <script src="{{ asset('template/admin/assets/js/pages/dashboard.js') }}"></script>
+                <script src="{{ asset('template/admin/assets/js/main.js') }}"></script>
