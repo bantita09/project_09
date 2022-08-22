@@ -31,4 +31,9 @@ class WineyToneController extends Controller
     {
         return view('adminpage.stock.winey-tone.add');
     }
+
+    public function edit()
+    {
+        return view('adminpage.stock.winey-tone.edit');
+    }
 }

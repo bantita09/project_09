@@ -29,7 +29,11 @@ class FruityToneController extends Controller
 
     public function add()
     {
-        // return view('home');
         return view('adminpage.stock.fruity-tone.add');
+    }
+
+    public function edit()
+    {
+        return view('adminpage.stock.fruity-tone.edit');
     }
 }

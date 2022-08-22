@@ -31,4 +31,9 @@ class OrderController extends Controller
     {
         return view('adminpage.order.add');
     }
+
+    public function edit()
+    {
+        return view('adminpage.order.edit');
+    }
 }

@@ -258,8 +258,9 @@
                                     </div>
                                 </div>
                                 <div class="px-4">
-                                    <button class='btn btn-block btn-xl btn-light-primary font-bold mt-3'>Start
-                                        Conversation</button>
+                                    <button class='btn btn-block btn-xl btn-light-primary font-bold mt-3'>
+                                        Start Conversation
+                                    </button>
                                 </div>
                             </div>
                         </div>

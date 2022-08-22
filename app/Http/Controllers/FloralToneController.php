@@ -31,4 +31,9 @@ class FloralToneController extends Controller
     {
         return view('adminpage.stock.floral-tone.add');
     }
+
+    public function edit()
+    {
+        return view('adminpage.stock.floral-tone.edit');
+    }
 }

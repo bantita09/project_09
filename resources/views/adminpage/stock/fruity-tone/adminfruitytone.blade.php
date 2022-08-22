@@ -18,7 +18,7 @@
                         <div class="col-12 col-md-6 order-md-2 order-first">
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="{{url('/admin/home')}}">Dashboard</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Table</li>
                                 </ol>
                             </nav>
@@ -34,7 +34,7 @@
                                 <div class="card-header">
                                     <h4 class="card-title">Striped rows</h4>
                                 </div>
-                                <a href="stockaddform.php" class="btn btn-primary rounded-pill" style="width: 10%; margin: 10px;">Add</a>
+                                <a href="{{url('/admin/stock/fruity-tone/add')}}" class="btn btn-primary rounded-pill" style="width: 10%; margin: 10px;">Add</a>
 
                                 <div class="card-content">
                                     <div class="card-body">
@@ -60,7 +60,7 @@
                                                     <td class="text-bold-500">UI/UX</td>
                                                     <td>Remote</td>
                                                     <td>Austin,Taxes</td>
-                                                    <td> <a href="stockeditform.php" class="btn btn-warning rounded-pill">Edit</a> </td>
+                                                    <td> <a href="{{url('/admin/stock/fruity-tone/edit')}}" class="btn btn-warning rounded-pill">Edit</a> </td>
                                             <td> <a href="stockdelete.php"  class="btn btn-danger rounded-pill">Delete</a> </td>                                                </tr>
                                                 <tr>
                                                     <td class="text-bold-500">Morgan Vanblum</td>
@@ -68,7 +68,7 @@
                                                     <td class="text-bold-500">Graphic concepts</td>
                                                     <td>Remote</td>
                                                     <td>Shangai,China</td>
-                                                    <td> <a href="stockeditform.php"  class="btn btn-warning rounded-pill">Edit</a> </td>
+                                                    <td> <a href="{{url('/admin/stock/fruity-tone/edit')}}"  class="btn btn-warning rounded-pill">Edit</a> </td>
                                             <td> <a href="stockdelete.php"  class="btn btn-danger rounded-pill">Delete</a> </td>                                                </tr>
                                                 <tr>
                                                     <td class="text-bold-500">Tiffani Blogz</td>
@@ -76,7 +76,7 @@
                                                     <td class="text-bold-500">Animation</td>
                                                     <td>Remote</td>
                                                     <td>Austin,Texas</td>
-                                                    <td> <a href="stockeditform.php"  class="btn btn-warning rounded-pill">Edit</a> </td>
+                                                    <td> <a href="{{url('/admin/stock/fruity-tone/edit')}}"  class="btn btn-warning rounded-pill">Edit</a> </td>
                                             <td> <a href="stockdelete.php"  class="btn btn-danger rounded-pill">Delete</a> </td>                                                </tr>
                                                 <tr>
                                                     <td class="text-bold-500">Ashley Boul</td>
@@ -84,7 +84,7 @@
                                                     <td class="text-bold-500">Animation</td>
                                                     <td>Remote</td>
                                                     <td>Austin,Texas</td>
-                                                    <td> <a href="stockeditform.php"  class="btn btn-warning rounded-pill">Edit</a> </td>
+                                                    <td> <a href="{{url('/admin/stock/fruity-tone/edit')}}"  class="btn btn-warning rounded-pill">Edit</a> </td>
                                             <td> <a href="stockdelete.php"  class="btn btn-danger rounded-pill">Delete</a> </td>
                                                 </tr>
                                                 <tr>
@@ -93,7 +93,7 @@
                                                     <td class="text-bold-500">Animation</td>
                                                     <td>Remote</td>
                                                     <td>Austin,Texas</td>
-                                                    <td> <a href="stockeditform.php"  class="btn btn-warning rounded-pill">Edit</a> </td>
+                                                    <td> <a href="{{url('/admin/stock/fruity-tone/edit')}}"  class="btn btn-warning rounded-pill">Edit</a> </td>
                                                     <td> <a href="stockdelete.php"  class="btn btn-danger rounded-pill">Delete</a> </td>
                                                 </tr>
                                             </tbody>

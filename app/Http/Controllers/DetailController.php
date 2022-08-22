@@ -31,4 +31,9 @@ class DetailController extends Controller
     {
         return view('adminpage.detail.add');
     }
+
+    public function edit()
+    {
+        return view('adminpage.detail.edit');
+    }
 }

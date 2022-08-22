@@ -29,7 +29,11 @@ class HouseBlendController extends Controller
 
     public function add()
     {
-        // return view('home');
         return view('adminpage.stock.house-blend.add');
+    }
+
+    public function edit()
+    {
+        return view('adminpage.stock.house-blend.edit');
     }
 }

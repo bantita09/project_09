@@ -29,7 +29,11 @@ class NuttyToneController extends Controller
 
     public function add()
     {
-        // return view('home');
         return view('adminpage.stock.nutty-tone.add');
+    }
+
+    public function edit()
+    {
+        return view('adminpage.stock.nutty-tone.edit');
     }
 }
