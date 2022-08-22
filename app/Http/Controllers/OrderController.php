@@ -26,4 +26,9 @@ class OrderController extends Controller
         // return view('home');
         return view('adminpage.order.adminorder');
     }
+
+    public function add()
+    {
+        return view('adminpage.order.add');
+    }
 }

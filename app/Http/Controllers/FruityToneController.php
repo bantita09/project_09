@@ -26,4 +26,10 @@ class FruityToneController extends Controller
         // return view('home');
         return view('adminpage.stock.fruity-tone.adminfruitytone');
     }
+
+    public function add()
+    {
+        // return view('home');
+        return view('adminpage.stock.fruity-tone.add');
+    }
 }

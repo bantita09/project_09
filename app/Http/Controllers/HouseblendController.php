@@ -26,4 +26,10 @@ class HouseBlendController extends Controller
         // return view('home');
         return view('adminpage.stock.house-blend.adminhouseblend');
     }
+
+    public function add()
+    {
+        // return view('home');
+        return view('adminpage.stock.house-blend.add');
+    }
 }

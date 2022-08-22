@@ -26,4 +26,9 @@ class DetailController extends Controller
         // return view('home');
         return view('adminpage.detail.admindetail');
     }
+
+    public function add()
+    {
+        return view('adminpage.detail.add');
+    }
 }

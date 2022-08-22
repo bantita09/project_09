@@ -34,7 +34,7 @@
                                 <div class="card-header">
                                     <h4 class="card-title">Striped rows</h4>
                                 </div>
-                                <a href="stockaddform.php" class="btn btn-primary rounded-pill" style="width: 10%; margin: 10px;">Add</a>
+                                <a href="{{url('/admin/stock/floral-tone/add')}}" class="btn btn-primary rounded-pill" style="width: 10%; margin: 10px;">Add</a>
 
                                 <div class="card-content">
                                     <div class="card-body">

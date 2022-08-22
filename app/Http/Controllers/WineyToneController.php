@@ -26,4 +26,9 @@ class WineyToneController extends Controller
         // return view('home');
         return view('adminpage.stock.winey-tone.adminwineytone');
     }
+
+    public function add()
+    {
+        return view('adminpage.stock.winey-tone.add');
+    }
 }
