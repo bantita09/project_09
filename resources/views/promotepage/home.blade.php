@@ -21,7 +21,7 @@
       <div class="row">
         <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
           <div class="about-img">
-            <img src="assets/img/home-1.jpg" alt="">
+            <img src="{{asset('template/promote/assets/img/home-1.jpg') }}" alt="">
           </div>
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
@@ -48,7 +48,7 @@
         <center>
           <div class="col-lg-9 mt-9 mt-lg-9">
             <div class="box" data-aos="zoom-in" data-aos-delay="300">
-              <img src="assets/img/n-pd-1.jpg" class="card-img-top" alt="...">
+              <img src="{{asset('template/promote/assets/n-pd-1.jpg') }}" class="card-img-top" alt="...">
               <h4> เมล็ดกาแฟใหม่จาก Hint Coffee Roaster ประจำเดือนกรกฎาคม</h4>
             </div>
           </div>
@@ -73,25 +73,25 @@
 
         <div class="col-lg-3 mt-3 mt-lg-0">
           <div class="box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-            <img src="assets/img/house-blend/HB-01.png" class="card-img-top" alt="">
+            <img src="{{asset('template/promote/assets/img/house-blend/HB-01.png') }}" class="card-img-top" alt="">
           </div>
         </div>
 
         <div class="col-lg-3 mt-3 mt-lg-0">
           <div class="box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-            <img src="assets/img/house-blend/HB-02.png" class="card-img-top" alt="">
+            <img src="{{asset('template/promote/assets/img/house-blend/HB-02.png') }}" class="card-img-top" alt="">
           </div>
         </div>
 
         <div class="col-lg-3 mt-3 mt-lg-0">
           <div class="box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-            <img src="assets/img/house-blend/HB-03.png" class="card-img-top" alt="">
+            <img src="{{asset('template/promote/assets/img/house-blend/HB-03.png') }}" class="card-img-top" alt="">
           </div>
         </div>
 
         <div class="col-lg-3 mt-3 mt-lg-0">
           <div class="box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-            <img src="assets/img/house-blend/HB-04.png" class="card-img-top" alt="">
+            <img src="{{asset('template/promote/assets/img/house-blend/HB-04.png') }}" class="card-img-top" alt="">
           </div>
         </div>
 
@@ -108,25 +108,25 @@
 
         <div class="col-lg-3 mt-3 mt-lg-0">
           <div class="box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-            <img src="assets/img/single-origin/SO-01.png" class="card-img-top" alt="">
+            <img src="{{asset('template/promote/assets/img/single-origin/SO-01.png') }}" class="card-img-top" alt="">
           </div>
         </div>
 
         <div class="col-lg-3 mt-3 mt-lg-0">
           <div class="box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-            <img src="assets/img/single-origin/SO-02.png" class="card-img-top" alt="">
+            <img src="{{asset('template/promote/assets/img/single-origin/SO-02.png') }}" class="card-img-top" alt="">
           </div>
         </div>
 
         <div class="col-lg-3 mt-3 mt-lg-0">
           <div class="box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-            <img src="assets/img/single-origin/SO-03.png" class="card-img-top" alt="">
+            <img src="{{asset('template/promote/assets/img/single-origin/SO-03.png') }}" class="card-img-top" alt="">
           </div>
         </div>
 
         <div class="col-lg-3 mt-3 mt-lg-0">
           <div class="box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-            <img src="assets/img/single-origin/SO-04.png" class="card-img-top" alt="">
+            <img src="{{asset('template/promote/assets/img/single-origin/SO-04.png') }}" class="card-img-top" alt="">
           </div>
         </div>
 

@@ -24,7 +24,7 @@
           <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="assets/img/house-blend/HB-01.png" class="img-fluid rounded-start" alt="">
+                <img src="{{asset('template/promote/assets/img/house-blend/HB-01.png') }}" class="img-fluid rounded-start" alt="">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -41,7 +41,7 @@
           <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="assets/img/house-blend/HB-02.png" class="img-fluid rounded-start" alt="">
+                <img src="{{asset('template/promote/assets/img/house-blend/HB-02.png') }}" class="img-fluid rounded-start" alt="">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -58,7 +58,7 @@
           <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="assets/img/house-blend/HB-03.png" class="img-fluid rounded-start" alt="">
+                <img src="{{asset('template/promote/assets/img/house-blend/HB-03.png') }}" class="img-fluid rounded-start" alt="">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -75,7 +75,7 @@
           <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="assets/img/house-blend/HB-04.png" class="img-fluid rounded-start" alt="">
+                <img src="{{asset('template/promote/assets/img/house-blend/HB-04.png') }}" class="img-fluid rounded-start" alt="">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -92,7 +92,7 @@
           <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="assets/img/house-blend/HB-05.png" class="img-fluid rounded-start" alt="">
+                <img src="{{asset('template/promote/assets/img/house-blend/HB-05.png') }}" class="img-fluid rounded-start" alt="">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -109,7 +109,7 @@
           <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="assets/img/house-blend/HB-06.png" class="img-fluid rounded-start" alt="">
+                <img src="{{asset('template/promote/assets/img/house-blend/HB-06.png') }}" class="img-fluid rounded-start" alt="">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -126,7 +126,7 @@
           <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="assets/img/house-blend/HB-07.png" class="img-fluid rounded-start" alt="">
+                <img src="{{asset('template/promote/assets/img/house-blend/HB-07.png') }}" class="img-fluid rounded-start" alt="">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
