@@ -26,7 +26,7 @@ class UserController extends Controller
     {
         $read = User::all();
 
-        return view('adminpage.adminuser.user', compact('read'));
+        return view('adminpage.user.adminuser', compact('read'));
     }
 
     public function add()

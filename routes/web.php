@@ -81,8 +81,8 @@ Route::get('/admin/detail/edit', [App\Http\Controllers\DetailController::class, 
 Route::get('/admin/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('adminpage.contact.admincontact');
 
     //routes user
-Route::get('/admin/user', [App\Http\Controllers\ContactController::class, 'index'])->name('adminpage.user.adminuser');
-Route::get('/admin/user/add', [App\Http\Controllers\DetailController::class, 'add'])->name('adminpage.user.add');
-Route::get('/admin/user/edit', [App\Http\Controllers\DetailController::class, 'edit'])->name('adminpage.user.edit');
+Route::get('/admin/user', [App\Http\Controllers\UserController::class, 'index'])->name('adminpage.user.adminuser');
+Route::get('/admin/user/add', [App\Http\Controllers\UserController::class, 'add'])->name('adminpage.user.add');
+Route::get('/admin/user/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('adminpage.user.edit');
 
 // End Admin

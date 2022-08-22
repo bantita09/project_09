@@ -34,7 +34,7 @@
                                 <div class="card-header">
                                     <h4 class="card-title">Striped rows</h4>
                                 </div>
-                                <a href="stockaddform.php" class="btn btn-primary rounded-pill" style="width: 10%; margin: 10px;">Add</a>
+                                <a href="{{url('/admin/user/add')}}" class="btn btn-primary rounded-pill" style="width: 10%; margin: 10px;">Add</a>
 
                                 <div class="card-content">
                                     <div class="card-body">
@@ -45,57 +45,23 @@
                                             <thead>
                                                 <tr>
                                                     <th>NAME</th>
-                                                    <th>RATE</th>
-                                                    <th>SKILL</th>
-                                                    <th>TYPE</th>
-                                                    <th>LOCATION</th> 
+                                                    <th>EMAIL</th>
+                                                    <th>PASSWORD</th>
                                                     <th>Edit</th>
                                                     <th>Delete</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td class="text-bold-500">Michael Right</td>
-                                                    <td>$15/hr</td>
-                                                    <td class="text-bold-500">UI/UX</td>
-                                                    <td>Remote</td>
-                                                    <td>Austin,Taxes</td>
-                                                    <td> <a href="stockeditform.php" class="btn btn-warning rounded-pill">Edit</a> </td>
-                                            <td> <a href="stockdelete.php"  class="btn btn-danger rounded-pill">Delete</a> </td>                                                </tr>
-                                                <tr>
-                                                    <td class="text-bold-500">Morgan Vanblum</td>
-                                                    <td>$13/hr</td>
-                                                    <td class="text-bold-500">Graphic concepts</td>
-                                                    <td>Remote</td>
-                                                    <td>Shangai,China</td>
-                                                    <td> <a href="stockeditform.php"  class="btn btn-warning rounded-pill">Edit</a> </td>
-                                            <td> <a href="stockdelete.php"  class="btn btn-danger rounded-pill">Delete</a> </td>                                                </tr>
-                                                <tr>
-                                                    <td class="text-bold-500">Tiffani Blogz</td>
-                                                    <td>$15/hr</td>
-                                                    <td class="text-bold-500">Animation</td>
-                                                    <td>Remote</td>
-                                                    <td>Austin,Texas</td>
-                                                    <td> <a href="stockeditform.php"  class="btn btn-warning rounded-pill">Edit</a> </td>
-                                            <td> <a href="stockdelete.php"  class="btn btn-danger rounded-pill">Delete</a> </td>                                                </tr>
-                                                <tr>
-                                                    <td class="text-bold-500">Ashley Boul</td>
-                                                    <td>$15/hr</td>
-                                                    <td class="text-bold-500">Animation</td>
-                                                    <td>Remote</td>
-                                                    <td>Austin,Texas</td>
-                                                    <td> <a href="stockeditform.php"  class="btn btn-warning rounded-pill">Edit</a> </td>
-                                            <td> <a href="stockdelete.php"  class="btn btn-danger rounded-pill">Delete</a> </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-bold-500">Mikkey Mice</td>
-                                                    <td>$15/hr</td>
-                                                    <td class="text-bold-500">Animation</td>
-                                                    <td>Remote</td>
-                                                    <td>Austin,Texas</td>
-                                                    <td> <a href="stockeditform.php"  class="btn btn-warning rounded-pill">Edit</a> </td>
-                                                    <td> <a href="stockdelete.php"  class="btn btn-danger rounded-pill">Delete</a> </td>
-                                                </tr>
+                                                    @foreach($read as $row)
+                                                    <td class="text-bold-500">{{ $row->name}}</td>
+                                                    <td>{{ $row->email}}</td>
+                                                    <td class="text-bold-500">{{ $row->password}}</td>
+                                                    <td> <a href="{{url('/admin/user/edit')}}" class="btn btn-warning rounded-pill">Edit</a> </td>
+                                            <td> <a href="stockdelete.php"  class="btn btn-danger rounded-pill">Delete</a> </td>                                                
+                                        </tr>
+                                               @endforeach
+                                                
                                             </tbody>
                                         </table>
                                     </div>
