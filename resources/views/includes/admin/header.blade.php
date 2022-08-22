@@ -67,6 +67,13 @@
                             </a>
                         </li>
 
+                        <li class="sidebar-item  ">
+                            <a href="{{url('/admin/user')}}" class="sidebar-link">
+                                <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                                <span>User</span>
+                            </a>
+                        </li>
+
                         <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="sidebar-link" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <i class="bi bi-stack"></i>
