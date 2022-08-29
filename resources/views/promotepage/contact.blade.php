@@ -1,5 +1,5 @@
-@extends ()
-@
+@extends('layouts.promote')
+@section('content')
 <footer id="footer">
   <div class="footer-top">
     <div class="container" style="margin:5%;">
@@ -29,6 +29,6 @@
       </div>
     </div>
   </div>
-</footer><!-- End contect -->
+</footer><!-- End Footer -->
 
-@endsection
+@stop
