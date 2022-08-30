@@ -1,5 +1,31 @@
 @extends('layouts.promote')
 @section('content')
+
+<style>
+  h5 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+  }
+
+  .card {
+    color: black;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .btn {
+    color: white;
+    background-color: #d9ba85;
+    border: #d9ba85;
+    transition-duration: 0.5s;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: #cda45e;
+    color: black;
+  }
+</style>
+
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
   <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">

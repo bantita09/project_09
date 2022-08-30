@@ -17,7 +17,7 @@
             <h3 style="font-size: 28px; font-weight:400;">Hint Coffee Roaster (Hint Khaerai)</h3>
             <p style="font-size: 18px;">
               4 Tiwanon 24 Alley, Tambon Bang Kraso, Mueang Nonthaburi District, Nonthaburi 11000<br><br>
-              <strong>Phone :</strong> 062 198 4854<br>
+              <b>Phone :</b> 062 198 4854<br>
             </p>
             <div class="social-links mt-3">
               <a href="https://www.facebook.com/hintcoffeeroaster" class="facebook"><i class="bx bxl-facebook"></i></a>Hint Coffee Roaster<br><br>

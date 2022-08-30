@@ -48,7 +48,7 @@
         <center>
           <div class="col-lg-9 mt-9 mt-lg-9">
             <div class="box" data-aos="zoom-in" data-aos-delay="300">
-              <img src="{{asset('template/promote/assets/n-pd-1.jpg') }}" class="card-img-top" alt="...">
+              <img src="{{asset ('template/promote/assets/img/n-pd-1.jpg') }}" class="card-img-top" alt="...">
               <h4> เมล็ดกาแฟใหม่จาก Hint Coffee Roaster ประจำเดือนกรกฎาคม</h4>
             </div>
           </div>
