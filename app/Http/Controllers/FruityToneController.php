@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Products;
 use Illuminate\Http\Request;
 
 class FruityToneController extends Controller
@@ -23,17 +24,52 @@ class FruityToneController extends Controller
      */
     public function index()
     {
-        // return view('home');
-        return view('adminpage.stock.fruity-tone.adminfruitytone');
+        $read = Products::all();
+
+        return view('adminpage.stock.fruity-tone.adminfruitytone', compact('read'));
     }
 
-    public function add()
+    public function formadd()
     {
+        //C1->Form
         return view('adminpage.stock.fruity-tone.add');
     }
 
-    public function edit()
+    public function add(Request $request)
     {
+        //C2->Create
+        $request->validate([
+            'name' => 'nullable',
+            'detail' => 'nullable',
+            'price' => 'nullable',
+            'image' => 'nullable',
+            'amount' => 'nullable',
+        ]);
+
+        Products::create($request->all());
+
+        return redirect()->route('adminpage.stock.fruity-tone.adminfruitytone');
+    }
+
+    public function formedit()
+    {
+        //U1->Form
         return view('adminpage.stock.fruity-tone.edit');
+    }
+
+    public function edit(Request $request)
+    {
+        //U2->Update
+        $request->validate([
+            'name' => 'nullable',
+            'detail' => 'nullable',
+            'price' => 'nullable',
+            'image' => 'nullable',
+            'Amount' => 'nullable',
+        ]);
+
+        Products::updated($request->all());
+
+        return redirect()->route('adminpage.stock.fruity-tone.adminfruitytone');
     }
 }

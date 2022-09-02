@@ -51,7 +51,7 @@
                                                     <th>Delete</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody> 
                                                 <tr>
                                                     @foreach($read as $row)
                                                     <td class="text-bold-500">{{ $row->name}}</td>

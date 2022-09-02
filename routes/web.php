@@ -40,28 +40,49 @@ Auth::routes();
     //routes home
 Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('adminpage.adminhome');
 
+
     //routes stock
         //routes house-blend
+            //R house-blend
 Route::get('/admin/stock/house-blend', [App\Http\Controllers\HouseBlendController::class, 'index'])->name('adminpage.stock.house-blend.adminhouseblend');
-Route::get('/admin/stock/house-blend/add', [App\Http\Controllers\HouseBlendController::class, 'add'])->name('adminpage.stock.house-blend.add');
-Route::get('/admin/stock/house-blend/edit', [App\Http\Controllers\HouseBlendController::class, 'edit'])->name('adminpage.stock.house-blend.edit');
+            //C house-blend
+Route::get('/admin/stock/house-blend/add', [App\Http\Controllers\HouseBlendController::class, 'formadd'])->name('adminpage.stock.house-blend.formadd');
+Route::post('/admin/stock/house-blend/add', [App\Http\Controllers\HouseBlendController::class, 'add'])->name('adminpage.stock.house-blend.add');
+            //U house-blend
+Route::get('/admin/stock/house-blend/edit', [App\Http\Controllers\HouseBlendController::class, 'formedit'])->name('adminpage.stock.house-blend.formedit');
+Route::post('/admin/stock/house-blend/edit', [App\Http\Controllers\HouseBlendController::class, 'edit'])->name('adminpage.stock.house-blend.edit');
 
 
         //routes floral-tone
+            //R house-blend
 Route::get('/admin/stock/floral-tone', [App\Http\Controllers\FloralToneController::class, 'index'])->name('adminpage.stock.floral-tone.adminfloraltone');
-Route::get('/admin/stock/floral-tone/add', [App\Http\Controllers\FloralToneController::class, 'add'])->name('adminpage.stock.floral-tone.add');
-Route::get('/admin/stock/floral-tone/edit', [App\Http\Controllers\FloralToneController::class, 'edit'])->name('adminpage.stock.floral-tone.edit');
+            //C house-blend
+Route::get('/admin/stock/floral-tone/add', [App\Http\Controllers\FloralToneController::class, 'formadd'])->name('adminpage.stock.floral-tone.formadd');
+Route::post('/admin/stock/floral-tone/add', [App\Http\Controllers\FloralToneController::class, 'add'])->name('adminpage.stock.floral-tone.add');
+            //U house-blend
+Route::get('/admin/stock/floral-tone/edit', [App\Http\Controllers\FloralToneController::class, 'formedit'])->name('adminpage.stock.floral-tone.formedit');
+Route::post('/admin/stock/floral-tone/edit', [App\Http\Controllers\FloralToneController::class, 'edit'])->name('adminpage.stock.floral-tone.edit');
 
         //routes fruity-tone
+            //R house-blend
 Route::get('/admin/stock/fruity-tone', [App\Http\Controllers\FruityToneController::class, 'index'])->name('adminpage.stock.fruity-tone.adminfruitytone');
-Route::get('/admin/stock/fruity-tone/add', [App\Http\Controllers\FruityToneController::class, 'add'])->name('adminpage.stock.fruity-tone.add');
+            //C house-blend
+Route::get('/admin/stock/fruity-tone/add', [App\Http\Controllers\FruityToneController::class, 'formadd'])->name('adminpage.stock.fruity-tone.formadd');
+Route::post('/admin/stock/fruity-tone/add', [App\Http\Controllers\FruityToneController::class, 'add'])->name('adminpage.stock.fruity-tone.add');
+            //U house-blend
+Route::get('/admin/stock/fruity-tone/edit', [App\Http\Controllers\FruityToneController::class, 'formedit'])->name('adminpage.stock.fruity-tone.formedit');
 Route::get('/admin/stock/fruity-tone/edit', [App\Http\Controllers\FruityToneController::class, 'edit'])->name('adminpage.stock.fruity-tone.edit');
 
 
         //routes nutty-tone
+            //R house-blend
 Route::get('/admin/stock/nutty-tone', [App\Http\Controllers\NuttyToneController::class, 'index'])->name('adminpage.stock.nutty-tone.adminnuttytone');
-Route::get('/admin/stock/nutty-tone/add', [App\Http\Controllers\NuttyToneController::class, 'add'])->name('adminpage.stock.nutty-tone.add');
-Route::get('/admin/stock/nutty-tone/edit', [App\Http\Controllers\NuttyToneController::class, 'edit'])->name('adminpage.stock.nutty-tone.edit');
+            //C house-blend
+Route::get('/admin/stock/nutty-tone/add', [App\Http\Controllers\NuttyToneController::class, 'formadd'])->name('adminpage.stock.nutty-tone.formadd');
+Route::post('/admin/stock/nutty-tone/add', [App\Http\Controllers\NuttyToneController::class, 'add'])->name('adminpage.stock.nutty-tone.add');
+            //U house-blend
+Route::get('/admin/stock/nutty-tone/edit', [App\Http\Controllers\NuttyToneController::class, 'formedit'])->name('adminpage.stock.nutty-tone.formedit');
+Route::post('/admin/stock/nutty-tone/edit', [App\Http\Controllers\NuttyToneController::class, 'edit'])->name('adminpage.stock.nutty-tone.edit');
 
         //routes winey-tone
 Route::get('/admin/stock/winey-tone', [App\Http\Controllers\WineyToneController::class, 'index'])->name('adminpage.stock.winey-tone.adminwineytone');

@@ -157,6 +157,7 @@ iframe {
 }
 
 .container-login100 {
+  background-image: url("hero-bg.jpg");
   width: 100%;  
   min-height: 100vh;
   display: -webkit-box;
@@ -168,7 +169,6 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #906b57;
 }
 
 .wrap-login100 {
