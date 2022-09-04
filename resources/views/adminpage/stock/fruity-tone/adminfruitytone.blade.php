@@ -44,13 +44,14 @@
                                         <table class="table table-striped mb-0">
                                             <thead>
                                                 <tr>
-                                                    <th>NAME</th>
-                                                    <th>RATE</th>
-                                                    <th>SKILL</th>
-                                                    <th>TYPE</th>
-                                                    <th>LOCATION</th> 
-                                                    <th>Edit</th>
-                                                    <th>Delete</th>
+                                                    <th>Name</th>
+                                                    <th>Detail</th>
+                                                    <th>Price</th>
+                                                    <th>Image</th>
+                                                    <th>Amount</th> 
+                                                    <th>Type Product</th> 
+                                                    <th>Edit</th> 
+                                                    <th>Delete</th> 
                                                 </tr>
                                             </thead>
                                             <tbody>

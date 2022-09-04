@@ -54,7 +54,7 @@ class FloralToneController extends Controller
     public function formedit()
     {
         //U1->Form
-        return view('adminpage.stock.house-blend.edit');
+        return view('adminpage.stock.floral-tone.edit');
     }
 
     public function edit(Request $request)

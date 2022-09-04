@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Promote;
 use Illuminate\Http\Request;
 
 class DetailController extends Controller
@@ -23,17 +24,46 @@ class DetailController extends Controller
      */
     public function index()
     {
-        // return view('home');
-        return view('adminpage.detail.admindetail');
+        $read = Promote::all();
+
+        return view('adminpage.detail.admindetail', compact('read'));
     }
 
-    public function add()
+    public function formadd()
     {
         return view('adminpage.detail.add');
     }
 
-    public function edit()
+    public function add(Request $request)
+    {
+        //C2->Create
+        $request->validate([
+            'name' => 'nullable',
+            'detail' => 'nullable',
+            'image' => 'nullable',
+        ]);
+
+        Promote::create($request->all());
+
+        return redirect()->route('adminpage.detail.admindetail');    
+    }
+
+    public function formedit()
     {
         return view('adminpage.detail.edit');
+    }
+
+    public function edit(Request $request)
+    {
+        //U2->Update
+        $request->validate([
+            'name' => 'nullable',
+            'detail' => 'nullable',
+            'image' => 'nullable',
+        ]);
+
+        Promote::updated($request->all());
+
+        return redirect()->route('adminpage.detail.admindetail');    
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Products;
 use Illuminate\Http\Request;
 
 class NuttyToneController extends Controller
@@ -23,17 +24,51 @@ class NuttyToneController extends Controller
      */
     public function index()
     {
-        // return view('home');
-        return view('adminpage.stock.nutty-tone.adminnuttytone');
+        $read = Products::all();
+
+        return view('adminpage.stock.nutty-tone.adminnuttytone', compact('read'));
     }
 
-    public function add()
+    public function formadd()
     {
         return view('adminpage.stock.nutty-tone.add');
     }
 
-    public function edit()
+    public function add(Request $request)
     {
+        //C2->Create
+        $request->validate([
+            'name' => 'nullable',
+            'detail' => 'nullable',
+            'price' => 'nullable',
+            'image' => 'nullable',
+            'amount' => 'nullable',
+        ]);
+
+        Products::create($request->all());
+
+        return redirect()->route('adminpage.stock.nutty-tone.adminnuttytone');
+    }
+
+    public function formedit()
+    {
+        //U1->Form
         return view('adminpage.stock.nutty-tone.edit');
+    }
+
+    public function edit(Request $request)
+    {
+        //U2->Update
+        $request->validate([
+            'name' => 'nullable',
+            'detail' => 'nullable',
+            'price' => 'nullable',
+            'image' => 'nullable',
+            'Amount' => 'nullable',
+        ]);
+
+        Products::updated($request->all());
+
+        return redirect()->route('adminpage.stock.nutty-tone.adminnuttytone');
     }
 }

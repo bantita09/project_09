@@ -29,13 +29,39 @@ class UserController extends Controller
         return view('adminpage.user.adminuser', compact('read'));
     }
 
-    public function add()
+    public function formadd()
     {
-        return view('adminpage.order.add');
+        return view('adminpage.user.add');
     }
 
-    public function edit()
+    public function add(Request $request)
     {
-        return view('adminpage.order.edit');
+        //C2->Create
+        $request->validate([
+            'name' => 'nullable',
+            'email' => 'nullable',
+            'password' => 'nullable',
+        ]);
+
+        User::create($request->all());
+
+        return redirect()->route('adminpage.user.adminuser');    }
+
+    public function formedit()
+    {
+        return view('adminpage.user.edit');
     }
+
+    public function edit(Request $request)
+    {
+        //U2->Update
+        $request->validate([
+            'name' => 'nullable',
+            'email' => 'nullable',
+            'password' => 'nullable',
+        ]);
+
+        User::updated($request->all());
+
+        return redirect()->route('adminpage.user.adminuser');        }
 }
