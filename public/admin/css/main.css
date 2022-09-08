@@ -157,7 +157,7 @@ iframe {
 }
 
 .container-login100 {
-  background-image: url("hero-bg.jpg");
+  background-color: #2A1D11;
   width: 100%;  
   min-height: 100vh;
   display: -webkit-box;
