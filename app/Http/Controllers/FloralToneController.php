@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class FloralToneController extends Controller
 {
@@ -45,6 +46,8 @@ class FloralToneController extends Controller
             'image' => 'nullable',
             'amount' => 'nullable',
         ]);
+        $filename = Str::random(10). '.' . $request->file('image')->getClientOriginalExtension();
+        $request->file('image')->move(public_path().'/admin/upload/product', $filename);
 
         Products::create($request->all());
 

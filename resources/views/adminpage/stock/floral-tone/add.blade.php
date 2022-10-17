@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
-                                    <form action="{{ route('adminpage.stock.floral-tone.add') }}" method="POST" class="form form-horizontal">
+                                    <form action="{{ route('adminpage.stock.floral-tone.add') }}" method="POST" class="form form-horizontal" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-body">
                                                 <div class="row">
@@ -62,7 +62,7 @@
                                                         <label>Image</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
-                                                        <input type="text" class="form-control" name="image" placeholder="Product Image">
+                                                        <input type="image" class="form-control" name="image" placeholder="Product Image">
                                                     </div>
 
                                                     <div class="col-md-4">
