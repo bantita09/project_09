@@ -24,8 +24,13 @@ Route::view('/', 'promotepage.home')->name('home');
 Route::view('/house-blend', 'promotepage.house-blend')->name('house-blend');
 Route::view('/single-origin', 'promotepage.single-origin')->name('single-origin');
 Route::view('/beverage-menu', 'promotepage.beverage-menu')->name('beverage-menu');
-Route::view('/contact', 'promotepage.contact')->name('contact');
 
+// Route::view('/contact', 'promotepage.contact')->name('contact');
+// Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contactpage'])->name('contact');
+// Route::post('/contact', [App\Http\Controllers\ContactController::class, 'add'])->name('contact.add');
+
+Route::get('/contact', [App\Http\Controllers\ContactPageController::class, 'contactpage'])->name('contact');
+Route::post('/contact', [App\Http\Controllers\ContactPageController::class, 'add'])->name('contact.add');
 
 // End Promote
 

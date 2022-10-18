@@ -41,29 +41,30 @@
             <div class="container" data-aos="fade-up">
 
               <div class="section-title">
-                <p style="color: white;">Contact</p>
+                <p style="color: white;">Contact Us</p>
               </div>
 
-              <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+              <form action="{{ route('contact.add') }}" method="POST" role="form"  data-aos="fade-up" data-aos-delay="100">
+                @csrf
+                <input type="text" name="name" class="form-control" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" >
                 <div class="validate"></div>
 
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" required>
+                <input type="email" class="form-control" name="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" >
                 <div class="validate"></div>
 
-                <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                <input type="text" class="form-control" name="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars" >
                 <div class="validate"></div>
 
                 <div class="form-group mt-3">
-                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                  <textarea class="form-control" name="message" rows="5" placeholder="Message" ></textarea>
                   <div class="validate"></div>
                 </div>
 
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                   <div class="loading">Loading</div>
                   <div class="error-message"></div>
                   <div class="sent-message">Your message was sent. We will call back. Thank you!</div>
-                </div>
+                </div> -->
 
                 <div class="text-center"><button type="submit">Send</button></div>
               </form>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -23,7 +24,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        // return view('home');
-        return view('adminpage.contact.admincontact');
+        $read = Contact::all();
+
+        return view('adminpage.contact.admincontact', compact('read'));
     }
+
 }
