@@ -32,7 +32,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Winey-Tone</h4>
+                                    <h4 class="card-title">Winey Tone</h4>
                                 </div>
                                 <a href="{{url('/admin/stock/winey-tone/add')}}" class="btn btn-primary rounded-pill" style="width: 10%; margin: 10px;">Add</a>
 
@@ -44,27 +44,31 @@
                                         <table class="table table-striped mb-0">
                                             <thead>
                                                 <tr>
+                                                    <th>ID</th>
                                                     <th>Name</th>
                                                     <th>Detail</th>
                                                     <th>Price</th>
                                                     <th>Image</th>
-                                                    <th>Amount</th>
-                                                    <th>Type Product</th>
-                                                    <th>Edit</th>
-                                                    <th>Delete</th>
+                                                    <th>Amount</th> 
+                                                    <th>Type Product</th> 
+                                                    <th>Edit</th> 
+                                                    <th>Delete</th> 
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($winey as $wineyt)
                                                 <tr>
-                                                @foreach($read as $row)
-                                                <td class="text-bold-500">{{ $row->name}}</td>
-                                                    <td>{{ $row->detail}}</td>
-                                                    <td class="text-bold-500">{{ $row->price}}</td>
-                                                    <td class="text-bold-500">{{ $row->image}}</td>
-                                                    <td class="text-bold-500">{{ $row->Amount}}</td>
-                                                    <td class="text-bold-500">{{ $row->id_type_product}}</td>
-                                                    <td> <a href="{{url('/admin/stock/winey-tone/edit')}}" class="btn btn-warning rounded-pill">Edit</a> </td>
-                                            <td> <a href="stockdelete.php"  class="btn btn-danger rounded-pill">Delete</a> </td>
+                                                    <td class="text-bold-500">{{ $wineyt->id }}</td>
+                                                    <td class="text-bold-500">{{ $wineyt->name }}</td>
+                                                    <td class="text-bold-500">{{ $wineyt->detail }}</td>
+                                                    <td class="text-bold-500">{{ $wineyt->price }}</td>
+                                                    <td class="text-bold-500">
+                                                        <img src="{{ asset('admin/upload/wineyproduct/'. $wineyt->image) }}" width="100px" height="80px">
+                                                    </td>
+                                                    <td class="text-bold-500">{{ $wineyt->Amount }}</td>
+                                                    <td class="text-bold-500">{{ $wineyt->id_type_product }}</td>
+                                                    <td> <a href="{{url('/admin/stock/winey-tone/edit/'. $wineyt->id)}}" class="btn btn-warning rounded-pill">Edit</a> </td>
+                                                    <td> <a href="{{url('/admin/wineyproduct/delete/'. $wineyt->id)}}"  class="btn btn-danger rounded-pill">Delete</a> </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

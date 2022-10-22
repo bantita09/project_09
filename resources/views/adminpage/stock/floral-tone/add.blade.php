@@ -62,7 +62,7 @@
                                                         <label>Image</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
-                                                        <input type="image" class="form-control" name="image" placeholder="Product Image">
+                                                        <input type="file" class="form-control" name="image" placeholder="Product Image">
                                                     </div>
 
                                                     <div class="col-md-4">
@@ -72,11 +72,18 @@
                                                         <input type="number" class="form-control" name="amount" placeholder="Product Amount">
                                                     </div>
 
+                                                    <div class="col-md-4">
+                                                        <label>Type Product</label>
+                                                    </div>
+                                                    <div class="col-md-8 form-group">
+                                                        <input type="number" class="form-control" name="type_product" placeholder="Type Product">
+                                                    </div>
+
                                                     <div class="col-12 col-md-8 offset-md-4 form-group">
                                                     </div>
                                                     <div class="col-sm-12 d-flex justify-content-end">
                                                         <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                                        <a href="{{ url('admin/stock/floral-tone') }}" class="btn btn-primary me-1 mb-1">Back</a>
+                                                        <a href="{{ route('adminpage.stock.floral-tone.adminfloraltone') }}" class="btn btn-primary me-1 mb-1">Back</a>
                                                     </div>
                                                 </div>
                                             </div>

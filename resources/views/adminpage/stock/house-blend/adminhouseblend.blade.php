@@ -44,6 +44,7 @@
                                         <table class="table table-striped mb-0">
                                             <thead>
                                                 <tr>
+                                                    <th>ID</th>
                                                     <th>Name</th>
                                                     <th>Detail</th>
                                                     <th>Price</th>
@@ -55,16 +56,19 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($houseblend as $hb)
                                                 <tr>
-                                                @foreach($read as $row)
-                                                    <td class="text-bold-500">{{ $row->name}}</td>
-                                                    <td>{{ $row->detail}}</td>
-                                                    <td class="text-bold-500">{{ $row->price}}</td>
-                                                    <td class="text-bold-500">{{ $row->image}}</td>
-                                                    <td class="text-bold-500">{{ $row->Amount}}</td>
-                                                    <td class="text-bold-500">{{ $row->id_type_product}}</td>
-                                                    <td> <a href="{{url('/admin/stock/house-blend/edit')}}" class="btn btn-warning rounded-pill">Edit</a> </td>
-                                            <td> <a href="stockdelete.php"  class="btn btn-danger rounded-pill">Delete</a> </td>
+                                                    <td class="text-bold-500">{{ $hb->id }}</td>
+                                                    <td class="text-bold-500">{{ $hb->name }}</td>
+                                                    <td class="text-bold-500">{{ $hb->detail }}</td>
+                                                    <td class="text-bold-500">{{ $hb->price }}</td>
+                                                    <td class="text-bold-500">
+                                                        <img src="{{ asset('admin/upload/hbproduct/'. $hb->image) }}" width="100px" height="80px">
+                                                    </td>
+                                                    <td class="text-bold-500">{{ $hb->Amount }}</td>
+                                                    <td class="text-bold-500">{{ $hb->id_type_product }}</td>
+                                                    <td> <a href="{{url('/admin/stock/house-blend/edit/'. $hb->id)}}" class="btn btn-warning rounded-pill">Edit</a> </td>
+                                                    <td> <a href="{{url('/admin/hbproduct/delete/'. $hb->id)}}"  class="btn btn-danger rounded-pill">Delete</a> </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

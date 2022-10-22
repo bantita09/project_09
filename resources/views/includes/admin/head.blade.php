@@ -12,3 +12,4 @@
     <link rel="stylesheet" href="{{ asset('template/admin/assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('template/admin/assets/css/app.css') }}">
     <link rel="shortcut icon" href="{{ asset('template/admin/assets/images/favicon.svg') }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">

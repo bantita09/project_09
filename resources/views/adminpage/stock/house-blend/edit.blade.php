@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
                             <h3>House-Blend [Edit]</h3>
-                            <p class="text-subtitle text-muted">House-blend product list</p>
+                            <p class="text-subtitle text-muted">For edit house-blend product list</p>
                         </div>
                         <div class="col-12 col-md-6 order-md-2 order-first">
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -33,47 +33,58 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form class="form form-horizontal">
+                                    <form action="{{ url('/admin/stock/house-blend/update/'.$houseblend->id) }}" method="POST" class="form form-horizontal" enctype="multipart/form-data">
+                                            @csrf
                                             <div class="form-body">
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <label>Name</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
-                                                        <input type="text" class="form-control" name="name" placeholder="Product Name">
+                                                        <input type="text" class="form-control" name="name" value="{{ $houseblend->name }}" placeholder="Product Name">
                                                     </div>
 
                                                     <div class="col-md-4">
                                                         <label>Detail</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
-                                                        <input type="text" class="form-control" name="detail" placeholder="Product Detail">
+                                                        <input type="text" class="form-control" name="detail" value="{{ $houseblend->detail }}" placeholder="Product Detail">
                                                     </div>
 
                                                     <div class="col-md-4">
                                                         <label>Price</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
-                                                        <input type="number" class="form-control" name="price" placeholder="Product Price">
+                                                        <input type="number" class="form-control" name="price" value="{{ $houseblend->price }}" placeholder="Product Price">
                                                     </div>
 
                                                     <div class="col-md-4">
                                                         <label>Image</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
-                                                        <input type="text" class="form-control" name="image" placeholder="Product Image">
+                                                        <input type="file" class="form-control" name="image"  placeholder="Product Image">
+                                                        <img src="{{ asset('admin/upload/hbproduct/'. $houseblend->image) }}" width="100px" height="80px">
                                                     </div>
 
                                                     <div class="col-md-4">
                                                         <label>Amount</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
-                                                        <input type="number" class="form-control" name="image" placeholder="Product Amount">
+                                                        <input type="number" class="form-control" name="amount" value="{{ $houseblend->Amount }}" placeholder="Product Amount">
                                                     </div>
+
+                                                    <div class="col-md-4">
+                                                        <label>Type Product</label>
+                                                    </div>
+                                                    <div class="col-md-8 form-group">
+                                                        <input type="number" class="form-control" name="type_product" value="{{ $houseblend->id_type_product }}" placeholder="Type Product">
+                                                    </div>
+
+                                                    <div class="col-12 col-md-8 offset-md-4 form-group">
                                                     </div>
                                                     <div class="col-sm-12 d-flex justify-content-end">
                                                         <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                                        <a href="{{ url('admin/stock/house-blend') }}" class="btn btn-primary me-1 mb-1">Back</a>
+                                                        <a href="{{ route('adminpage.stock.house-blend.adminhouseblend') }}" class="btn btn-primary me-1 mb-1">Back</a>
                                                     </div>
                                                 </div>
                                             </div>

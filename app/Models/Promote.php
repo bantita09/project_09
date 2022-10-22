@@ -15,6 +15,8 @@ class Promote extends Model
     protected $fillable = [
         'name',
         'detail',
-        'imgae',
+        'image',
+        'type_product',
     ];
+    protected $primaryKey = 'id';
 }

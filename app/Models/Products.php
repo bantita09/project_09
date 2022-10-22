@@ -17,5 +17,8 @@ class Products extends Model
         'detail',
         'price',
         'image',
+        'amount',
+        'type_product',
     ];
+    protected $primaryKey = 'id';
 }

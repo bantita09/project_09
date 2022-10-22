@@ -15,3 +15,5 @@
                 <script src="{{ asset('template/admin/assets/js/pages/dashboard.js') }}"></script>
 
                 <script src="{{ asset('template/admin/assets/js/main.js') }}"></script>
+
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

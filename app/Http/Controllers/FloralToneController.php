@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Products;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
 class FloralToneController extends Controller
 {
@@ -25,9 +27,13 @@ class FloralToneController extends Controller
      */
     public function index()
     {
-        $read = Products::all();
+        $floral = Products::all();
 
-        return view('adminpage.stock.floral-tone.adminfloraltone', compact('read'));
+        return view('adminpage.stock.floral-tone.adminfloraltone', compact('floral'));
+
+        // $read = Products::all();
+
+        // return view('adminpage.stock.floral-tone.adminfloraltone', compact('read'));
     }
 
     public function formadd()
@@ -38,41 +44,109 @@ class FloralToneController extends Controller
 
     public function add(Request $request)
     {
-        //C2->Create
-        $request->validate([
-            'name' => 'nullable',
-            'detail' => 'nullable',
-            'price' => 'nullable',
-            'image' => 'nullable',
-            'amount' => 'nullable',
-        ]);
-        $filename = Str::random(10). '.' . $request->file('image')->getClientOriginalExtension();
-        $request->file('image')->move(public_path().'/admin/upload/product', $filename);
+        $floral = new Products();
+        $floral->name = $request->name;
+        $floral->detail = $request->detail;
+        $floral->price = $request->price;
+        $floral->Amount = $request->amount;
+        $floral->id_type_product = $request->type_product;
 
-        Products::create($request->all());
+        if ($request->hasFile('image')) {
+            $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path() . '/admin/upload/floralproduct/', $filename);
+            Image::make(public_path() . '/admin/upload/floralproduct/' . $filename);
+            $floral->image = $filename;
+        }else {
+            $floral->image = 'nopic.png';
+        }
+        $floral->save();
+        toast('Save Successfully', 'success');
+
+        return redirect()->route('adminpage.stock.floral-tone.adminfloraltone');
+
+        // C2->Create
+        // $request->validate([
+        //     'name' => 'nullable',
+        //     'detail' => 'nullable',
+        //     'price' => 'nullable',
+        //     'image' => 'nullable',
+        //     'Amount' => 'nullable',
+        // ]);
+
+        // Products::create($request->all());
+
+        // return redirect()->route('adminpage.stock.floral-tone.adminfloraltone');
+    }
+
+    public function delete($id)
+    {
+        $floral = Products::find($id);
+
+        if ($floral->image != 'nopic.png') {
+            File::delete(public_path() . '/admin/upload/floralproduct/' . $floral->image);
+        }
+        $floral->delete();
+        toast('Delete Successfully', 'success');
 
         return redirect()->route('adminpage.stock.floral-tone.adminfloraltone');
     }
 
-    public function formedit()
+    public function edit($id)
     {
-        //U1->Form
-        return view('adminpage.stock.floral-tone.edit');
+        return view('adminpage.stock.floral-tone.edit')->with('floral', Products::find($id));
     }
 
-    public function edit(Request $request)
+    public function update(Request $request, $id)
     {
-        //U2->Update
-        $request->validate([
-            'name' => 'nullable',
-            'detail' => 'nullable',
-            'price' => 'nullable',
-            'image' => 'nullable',
-            'Amount' => 'nullable',
-        ]);
+        if ($request->hasFile('image')) {
+            $floral = Products::find($id);
+            $floral->name = $request->name;
+            $floral->detail = $request->detail;
+            $floral->price = $request->price;
+            $floral->image = $request->image;
+            $floral->Amount = $request->amount;
+            $floral->id_type_product = $request->type_product;
 
-        Products::updated($request->all());
+            if ($floral->image != 'nopic.png') {
+                File::delete(public_path() . '/admin/upload/floralproduct/' . $floral->image);
+            }
+
+            $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path() . '/admin/upload/floralproduct/', $filename);
+            Image::make(public_path() . '/admin/upload/floralproduct/' . $filename);
+            $floral->image = $filename;
+        }
+        $floral = Products::find($id);
+        $floral->name = $request->name;
+        $floral->detail = $request->detail;
+        $floral->price = $request->price;
+        $floral->Amount = $request->amount;
+        $floral->id_type_product = $request->type_product;
+        $floral->save();
+        toast('Update Successfully', 'success');
 
         return redirect()->route('adminpage.stock.floral-tone.adminfloraltone');
     }
+
+    // public function formedit()
+    // {
+    //     //U1->Form
+    //     return view('adminpage.stock.floral-tone.edit');
+    // }
+
+    // public function edit(Request $request)
+    // {
+    //     //U2->Update
+    //     $request->validate([
+    //         'name' => 'nullable',
+    //         'detail' => 'nullable',
+    //         'price' => 'nullable',
+    //         'image' => 'nullable',
+    //         'Amount' => 'nullable',
+    //     ]);
+
+    //     Products::updated($request->all());
+
+    //     return redirect()->route('adminpage.stock.floral-tone.adminfloraltone');
+    // }
 }

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Products;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
 class WineyToneController extends Controller
 {
@@ -24,50 +27,126 @@ class WineyToneController extends Controller
      */
     public function index()
     {
-        $read = Products::all();
+        $winey = Products::all();
 
-        return view('adminpage.stock.winey-tone.adminwineytone', compact('read'));
+        return view('adminpage.stock.winey-tone.adminwineytone', compact('winey'));
+
+        // $read = Products::all();
+
+        // return view('adminpage.stock.winey-tone.adminwineytone', compact('read'));
     }
 
     public function formadd()
     {
+        //C1->Form
         return view('adminpage.stock.winey-tone.add');
     }
 
     public function add(Request $request)
     {
-        //C2->Create
-        $request->validate([
-            'name' => 'nullable',
-            'detail' => 'nullable',
-            'price' => 'nullable',
-            'image' => 'nullable',
-            'amount' => 'nullable',
-        ]);
+        $winey = new Products();
+        $winey->name = $request->name;
+        $winey->detail = $request->detail;
+        $winey->price = $request->price;
+        $winey->Amount = $request->amount;
+        $winey->id_type_product = $request->type_product;
 
-        Products::create($request->all());
+        if ($request->hasFile('image')) {
+            $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path() . '/admin/upload/wineyproduct/', $filename);
+            Image::make(public_path() . '/admin/upload/wineyproduct/' . $filename);
+            $winey->image = $filename;
+        }else {
+            $winey->image = 'nopic.png';
+        }
+        $winey->save();
+        toast('Save Successfully', 'success');
+
+        return redirect()->route('adminpage.stock.winey-tone.adminwineytone');
+
+        // C2->Create
+        // $request->validate([
+        //     'name' => 'nullable',
+        //     'detail' => 'nullable',
+        //     'price' => 'nullable',
+        //     'image' => 'nullable',
+        //     'Amount' => 'nullable',
+        // ]);
+
+        // Products::create($request->all());
+
+        // return redirect()->route('adminpage.stock.floral-tone.adminfloraltone');
+    }
+
+    public function delete($id)
+    {
+        $winey = Products::find($id);
+
+        if ($winey->image != 'nopic.png') {
+            File::delete(public_path() . '/admin/upload/wineyproduct/' . $winey->image);
+        }
+        $winey->delete();
+        toast('Delete Successfully', 'success');
 
         return redirect()->route('adminpage.stock.winey-tone.adminwineytone');
     }
 
-    public function formedit()
+    public function edit($id)
     {
-        return view('adminpage.stock.winey-tone.edit');
+        return view('adminpage.stock.winey-tone.edit')->with('winey', Products::find($id));
     }
 
-    public function edit(Request $request)
+    public function update(Request $request, $id)
     {
-        //U2->Update
-        $request->validate([
-            'name' => 'nullable',
-            'detail' => 'nullable',
-            'price' => 'nullable',
-            'image' => 'nullable',
-            'Amount' => 'nullable',
-        ]);
+        if ($request->hasFile('image')) {
+            $winey = Products::find($id);
+            $winey->name = $request->name;
+            $winey->detail = $request->detail;
+            $winey->price = $request->price;
+            $winey->image = $request->image;
+            $winey->Amount = $request->amount;
+            $winey->id_type_product = $request->type_product;
 
-        Products::updated($request->all());
+            if ($winey->image != 'nopic.png') {
+                File::delete(public_path() . '/admin/upload/wineyproduct/' . $winey->image);
+            }
 
-        return redirect()->route('adminpage.stock.winey-tone.adminwineytone');    
+            $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path() . '/admin/upload/wineyproduct/', $filename);
+            Image::make(public_path() . '/admin/upload/wineyproduct/' . $filename);
+            $winey->image = $filename;
+        }
+        $winey = Products::find($id);
+        $winey->name = $request->name;
+        $winey->detail = $request->detail;
+        $winey->price = $request->price;
+        $winey->Amount = $request->amount;
+        $winey->id_type_product = $request->type_product;
+        $winey->save();
+        toast('Update Successfully', 'success');
+
+        return redirect()->route('adminpage.stock.winey-tone.adminwineytone');
     }
+
+    // public function formedit()
+    // {
+    //     //U1->Form
+    //     return view('adminpage.stock.floral-tone.edit');
+    // }
+
+    // public function edit(Request $request)
+    // {
+    //     //U2->Update
+    //     $request->validate([
+    //         'name' => 'nullable',
+    //         'detail' => 'nullable',
+    //         'price' => 'nullable',
+    //         'image' => 'nullable',
+    //         'Amount' => 'nullable',
+    //     ]);
+
+    //     Products::updated($request->all());
+
+    //     return redirect()->route('adminpage.stock.floral-tone.adminfloraltone');
+    // }
 }

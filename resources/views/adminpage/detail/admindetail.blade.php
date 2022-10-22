@@ -44,6 +44,7 @@
                                         <table class="table table-striped mb-0">
                                             <thead>
                                                 <tr>
+                                                    <th>ID</th>
                                                     <th>Name</th>
                                                     <th>Detail</th>
                                                     <th>Image</th>
@@ -53,14 +54,17 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($detail as $detailp)
                                                 <tr>
-                                                @foreach($read as $row)
-                                                    <td class="text-bold-500">{{ $row->name}}</td>
-                                                    <td>{{ $row->detail}}</td>
-                                                    <td class="text-bold-500">{{ $row->image}}</td>
-                                                    <td class="text-bold-500">{{ $row->id_type_product}}</td>
-                                                    <td> <a href="{{url('/admin/detail/edit')}}" class="btn btn-warning rounded-pill">Edit</a> </td>
-                                            <td> <a href="stockdelete.php"  class="btn btn-danger rounded-pill">Delete</a> </td>
+                                                    <td class="text-bold-500">{{ $detailp->id }}</td>
+                                                    <td class="text-bold-500">{{ $detailp->name }}</td>
+                                                    <td class="text-bold-500">{{ $detailp->detail }}</td>
+                                                    <td class="text-bold-500">
+                                                        <img src="{{ asset('admin/upload/promote/'. $detailp->image) }}" width="100px" height="80px">
+                                                    </td>
+                                                    <td class="text-bold-500">{{ $detailp->id_type_product }}</td>
+                                                    <td> <a href="{{url('/admin/detail/edit/'. $detailp->id)}}" class="btn btn-warning rounded-pill">Edit</a> </td>
+                                                    <td> <a href="{{url('/admin/detail/delete/'. $detailp->id)}}"  class="btn btn-danger rounded-pill">Delete</a> </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
