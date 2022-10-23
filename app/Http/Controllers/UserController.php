@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -45,23 +45,53 @@ class UserController extends Controller
 
         User::create($request->all());
 
-        return redirect()->route('adminpage.user.adminuser');    }
-
-    public function formedit()
-    {
-        return view('adminpage.user.edit');
+        return redirect()->route('adminpage.user.adminuser');
     }
 
-    public function edit(Request $request)
+
+    public function delete($id)
     {
-        //U2->Update
-        $request->validate([
-            'name' => 'nullable',
-            'email' => 'nullable',
-            'password' => 'nullable',
-        ]);
+        $read = User::find($id);
 
-        User::updated($request->all());
+        $read->delete();
+        toast('Delete Successfully', 'success');
 
-        return redirect()->route('adminpage.user.adminuser');        }
+        return redirect()->route('adminpage.user.adminuser');
+    }
+
+
+    public function edit($id)
+    {
+        return view('adminpage.user.edit')->with('read', User::find($id));
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        $read = User::find($id);
+        $read->name = $request->name;
+        $read->email = $request->email;
+        $read->password = $request->password;
+        $read->save();
+        toast('Update Successfully', 'success');
+
+        return redirect()->route('adminpage.user.adminuser');
+    }
+    // public function formedit()
+    // {
+    //     return view('adminpage.user.edit');
+    // }
+
+    // public function edit(Request $request)
+    // {
+    //     //U2->Update
+    //     $request->validate([
+    //         'name' => 'nullable',
+    //         'email' => 'nullable',
+    //         'password' => 'nullable',
+    //     ]);
+
+    //     User::updated($request->all());
+
+    //     return redirect()->route('adminpage.user.adminuser');        }
 }

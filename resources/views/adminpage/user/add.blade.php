@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form action="{{ route('adminpage.stock.house-blend.add') }}" method="POST" class="form form-horizontal">
+                                        <form action="{{ route('adminpage.user.add') }}" method="POST" class="form form-horizontal">
                                             @csrf
                                             <div class="form-body">
                                                 <div class="row">
@@ -41,42 +41,28 @@
                                                         <label>Name</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
-                                                        <input type="text" class="form-control" name="name" placeholder="Product Name">
+                                                        <input type="text" class="form-control" name="name" placeholder="Username">
                                                     </div>
 
                                                     <div class="col-md-4">
-                                                        <label>Detail</label>
+                                                        <label>Email</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
-                                                        <input type="text" class="form-control" name="detail" placeholder="Product Detail">
+                                                        <input type="email" class="form-control" name="email" placeholder="Email">
                                                     </div>
 
                                                     <div class="col-md-4">
-                                                        <label>Price</label>
+                                                        <label>Password</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
-                                                        <input type="number" class="form-control" name="price" placeholder="Product Price">
-                                                    </div>
-
-                                                    <div class="col-md-4">
-                                                        <label>Image</label>
-                                                    </div>
-                                                    <div class="col-md-8 form-group">
-                                                        <input type="text" class="form-control" name="image" placeholder="Product Image">
-                                                    </div>
-
-                                                    <div class="col-md-4">
-                                                        <label>Amount</label>
-                                                    </div>
-                                                    <div class="col-md-8 form-group">
-                                                        <input type="number" class="form-control" name="amount" placeholder="Product Amount">
+                                                        <input type="password" class="form-control" name="password" placeholder="Password">
                                                     </div>
 
                                                     <div class="col-12 col-md-8 offset-md-4 form-group">
                                                     </div>
                                                     <div class="col-sm-12 d-flex justify-content-end">
                                                         <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                                        <a href="{{ url('admin/stock/house-blend') }}" class="btn btn-primary me-1 mb-1">Back</a>
+                                                        <a href="{{ route('adminpage.user.adminuser') }}" class="btn btn-primary me-1 mb-1">Back</a>
                                                     </div>
                                                 </div>
                                             </div>

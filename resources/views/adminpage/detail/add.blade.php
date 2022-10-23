@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
                             <h3>Detail [Add]</h3>
-                            <p class="text-subtitle text-muted">For add detail of product</p>
+                            <p class="text-subtitle text-muted">For add promote details</p>
                         </div>
                         <div class="col-12 col-md-6 order-md-2 order-first">
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -29,11 +29,11 @@
                 <div class="col-md-12 col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Promote</h4>
+                                    <h4 class="card-title">Promote Page</h4>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
-                                    <form action="{{ route('adminpage.detail.add') }}" method="POST" class="form form-horizontal">
+                                    <form action="{{ route('adminpage.detail.add') }}" method="POST" class="form form-horizontal" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-body">
                                                 <div class="row">
@@ -55,14 +55,21 @@
                                                         <label>Image</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
-                                                        <input type="text" class="form-control" name="image" placeholder="Product Image">
+                                                        <input type="file" class="form-control" name="image" placeholder="Product Image">
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <label>Type Product</label>
+                                                    </div>
+                                                    <div class="col-md-8 form-group">
+                                                        <input type="number" class="form-control" name="type_product" placeholder="Type Product">
                                                     </div>
 
                                                     <div class="col-12 col-md-8 offset-md-4 form-group">
                                                     </div>
                                                     <div class="col-sm-12 d-flex justify-content-end">
                                                         <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                                        <a href="{{ url('admin/detail') }}" class="btn btn-primary me-1 mb-1">Back</a>
+                                                        <a href="{{ route('adminpage.detail.admindetail') }}" class="btn btn-primary me-1 mb-1">Back</a>
                                                     </div>
                                                 </div>
                                             </div>

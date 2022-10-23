@@ -47,7 +47,7 @@ class DetailController extends Controller
         $detail = new Promote();
         $detail->name = $request->name;
         $detail->detail = $request->detail;
-        $detail->id_type_product = $request->type_product;
+        $detail->type_product = $request->type_product;
 
         if ($request->hasFile('image')) {
             $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
@@ -101,7 +101,7 @@ class DetailController extends Controller
             $detail->name = $request->name;
             $detail->detail = $request->detail;
             $detail->image = $request->image;
-            $detail->id_type_product = $request->type_product;
+            $detail->type_product = $request->type_product;
 
             if ($detail->image != 'nopic.png') {
                 File::delete(public_path() . '/admin/upload/promote/' . $detail->image);
@@ -115,7 +115,7 @@ class DetailController extends Controller
         $detail = Promote::find($id);
         $detail->name = $request->name;
         $detail->detail = $request->detail;
-        $detail->id_type_product = $request->type_product;
+        $detail->type_product = $request->type_product;
         $detail->save();
         toast('Update Successfully', 'success');
 

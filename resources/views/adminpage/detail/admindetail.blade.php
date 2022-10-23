@@ -62,9 +62,9 @@
                                                     <td class="text-bold-500">
                                                         <img src="{{ asset('admin/upload/promote/'. $detailp->image) }}" width="100px" height="80px">
                                                     </td>
-                                                    <td class="text-bold-500">{{ $detailp->id_type_product }}</td>
+                                                    <td class="text-bold-500">{{ $detailp->type_product }}</td>
                                                     <td> <a href="{{url('/admin/detail/edit/'. $detailp->id)}}" class="btn btn-warning rounded-pill">Edit</a> </td>
-                                                    <td> <a href="{{url('/admin/detail/delete/'. $detailp->id)}}"  class="btn btn-danger rounded-pill">Delete</a> </td>
+                                                    <td> <a href="{{url('/admin/promote/delete/'. $detailp->id)}}"  class="btn btn-danger rounded-pill">Delete</a> </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

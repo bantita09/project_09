@@ -57,8 +57,9 @@
                                                     <td class="text-bold-500">{{ $row->name}}</td>
                                                     <td>{{ $row->email}}</td>
                                                     <td class="text-bold-500">{{ $row->password}}</td>
-                                                    <td> <a href="{{url('/admin/user/edit')}}" class="btn btn-warning rounded-pill">Edit</a> </td>
-                                            <td> <a href="stockdelete.php"  class="btn btn-danger rounded-pill">Delete</a> </td>                                                
+                                                    <td> <a href="{{url('/admin/user/edit/'. $row->id)}}" class="btn btn-warning rounded-pill">Edit</a> </td>
+                                            <td> 
+                                                <a href="{{url('/admin/user/delete/'. $row->id)}}"  class="btn btn-danger rounded-pill">Delete</a> </td>                                                
                                         </tr>
                                                @endforeach
                                                 

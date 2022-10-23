@@ -142,7 +142,7 @@ Route::get('/admin/detail', [App\Http\Controllers\DetailController::class, 'inde
 Route::get('/admin/detail/add', [App\Http\Controllers\DetailController::class, 'formadd'])->name('adminpage.detail.formadd');
 Route::post('/admin/detail/add', [App\Http\Controllers\DetailController::class, 'add'])->name('adminpage.detail.add');
         //U
-Route::get('/admin/detail/{id}', [DetailController::class, 'edit']);
+Route::get('/admin/detail/edit/{id}', [DetailController::class, 'edit']);
 Route::post('/admin/detail/update/{id}', [DetailController::class, 'update']);
 // Route::get('/admin/detail/edit', [App\Http\Controllers\DetailController::class, 'formedit'])->name('adminpage.detail.formedit');
 // Route::post('/admin/detail/edit', [App\Http\Controllers\DetailController::class, 'edit'])->name('adminpage.detail.edit');
