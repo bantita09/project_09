@@ -85,7 +85,7 @@ class HouseblendController extends Controller
         if ($houseblend->image != 'nopic.png') {
             File::delete(public_path() . '/admin/upload/hbproduct/' . $houseblend->image);
         }
-        $houseblend->delete();
+        $houseblend->forcedelete();
         toast('Delete Successfully', 'success');
 
         return redirect()->route('adminpage.stock.house-blend.adminhouseblend');
@@ -103,26 +103,28 @@ class HouseblendController extends Controller
             $houseblend->name = $request->name;
             $houseblend->detail = $request->detail;
             $houseblend->price = $request->price;
-            $houseblend->image = $request->image;
             $houseblend->Amount = $request->amount;
             $houseblend->id_type_product = $request->type_product;
-
+            $houseblend->image = $request->image;
             if ($houseblend->image != 'nopic.png') {
                 File::delete(public_path() . '/admin/upload/hbproduct/' . $houseblend->image);
             }
-
             $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path() . '/admin/upload/hbproduct/', $filename);
             Image::make(public_path() . '/admin/upload/hbproduct/' . $filename);
             $houseblend->image = $filename;
+           
+            
         }
+        
         $houseblend = Products::find($id);
         $houseblend->name = $request->name;
         $houseblend->detail = $request->detail;
         $houseblend->price = $request->price;
         $houseblend->Amount = $request->amount;
         $houseblend->id_type_product = $request->type_product;
-        $houseblend->save();
+        
+        $houseblend->update();
         toast('Update Successfully', 'success');
 
         return redirect()->route('adminpage.stock.house-blend.adminhouseblend');

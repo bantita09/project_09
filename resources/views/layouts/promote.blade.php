@@ -3,10 +3,12 @@
     
 <head>
     @include('includes.promote.head')
+    
+
 </head>
 
 <body>
-    
+        @include('sweetalert::alert')
     <header>
         @include('includes.promote.header')
     </header>

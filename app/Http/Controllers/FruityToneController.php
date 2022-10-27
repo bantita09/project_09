@@ -85,7 +85,7 @@ class FruityToneController extends Controller
         if ($fruity->image != 'nopic.png') {
             File::delete(public_path() . '/admin/upload/fruityproduct/' . $fruity->image);
         }
-        $fruity->delete();
+        $fruity->forcedelete();
         toast('Delete Successfully', 'success');
 
         return redirect()->route('adminpage.stock.fruity-tone.adminfruitytone');

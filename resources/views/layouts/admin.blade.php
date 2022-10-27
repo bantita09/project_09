@@ -3,10 +3,12 @@
     
 <head>
     @include('includes.admin.head')
+    
+
 </head>
 
 <body>
-    
+        @include('sweetalert::alert')
     <header>
         @include('includes.admin.header')
     </header>

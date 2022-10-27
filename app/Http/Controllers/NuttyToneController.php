@@ -85,7 +85,7 @@ class NuttyToneController extends Controller
         if ($nutty->image != 'nopic.png') {
             File::delete(public_path() . '/admin/upload/nuttyproduct/' . $nutty->image);
         }
-        $nutty->delete();
+        $nutty->forcedelete();
         toast('Delete Successfully', 'success');
 
         return redirect()->route('adminpage.stock.nutty-tone.adminnuttytone');

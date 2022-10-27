@@ -85,7 +85,7 @@ class WineyToneController extends Controller
         if ($winey->image != 'nopic.png') {
             File::delete(public_path() . '/admin/upload/wineyproduct/' . $winey->image);
         }
-        $winey->delete();
+        $winey->forcedelete();
         toast('Delete Successfully', 'success');
 
         return redirect()->route('adminpage.stock.winey-tone.adminwineytone');

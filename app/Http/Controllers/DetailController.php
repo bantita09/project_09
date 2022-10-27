@@ -83,7 +83,7 @@ class DetailController extends Controller
         if ($detail->image != 'nopic.png') {
             File::delete(public_path() . '/admin/upload/promote/' . $detail->image);
         }
-        $detail->delete();
+        $detail->forcedelete();
         toast('Delete Successfully', 'success');
 
         return redirect()->route('adminpage.detail.admindetail');

@@ -85,7 +85,7 @@ class FloralToneController extends Controller
         if ($floral->image != 'nopic.png') {
             File::delete(public_path() . '/admin/upload/floralproduct/' . $floral->image);
         }
-        $floral->delete();
+        $floral->forcedelete();
         toast('Delete Successfully', 'success');
 
         return redirect()->route('adminpage.stock.floral-tone.adminfloraltone');

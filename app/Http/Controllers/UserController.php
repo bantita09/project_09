@@ -53,7 +53,7 @@ class UserController extends Controller
     {
         $read = User::find($id);
 
-        $read->delete();
+        $read->forcedelete();
         toast('Delete Successfully', 'success');
 
         return redirect()->route('adminpage.user.adminuser');
