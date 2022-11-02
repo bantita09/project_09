@@ -8,8 +8,21 @@
   }
 
   .card {
+    margin: 5px;
     color: black;
     font-family: "Poppins", sans-serif;
+  }
+
+  .filterDiv {
+    float: left;
+    color: #ffffff;
+    line-height: 100px;
+    margin: 2px;
+    display: none;
+  }
+
+  .show {
+    display: block;
   }
 
   .btn {
@@ -18,11 +31,17 @@
     border: #d9ba85;
     transition-duration: 0.5s;
     cursor: pointer;
+    margin: 5px;
   }
 
   .btn:hover {
     background-color: #cda45e;
     color: black;
+  }
+
+  .btn.active {
+    background-color: #666;
+    color: white;
   }
 
   .overlay {
@@ -107,21 +126,29 @@
 
   <section>
     <div class="container" data-aos="fade-up">
+      <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+        <button class="btn" onclick="filterSelection('floral')"> Floral Tone</button>
+        <button class="btn" onclick="filterSelection('fruity')"> Fruity Tone</button>
+        <button class="btn" onclick="filterSelection('nutty')"> Nutty Tone</button>
+        <button class="btn" onclick="filterSelection('winey')"> Winey Tone</button>
+      </div>
 
       <div class="row">
 
         <div class="col-6">
-
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-01.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">ETHIOPIA : YIRGACHEFFE</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup1" class="btn btn-primary">Detail</a>
+          <div class="filterDiv floral">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-01.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">ETHIOPIA : YIRGACHEFFE</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup1" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -129,16 +156,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-02.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">INDONESIA : SUMATRA GAYO</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup2" class="btn btn-primary">Detail</a>
+          <div class="filterDiv floral">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-02.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">INDONESIA : SUMATRA GAYO</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup2" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -146,16 +175,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-03.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">INDONESIA : SUMATRA BEAR & BARREL</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup3" class="btn btn-primary">Detail</a>
+          <div class="filterDiv floral">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-03.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">INDONESIA : SUMATRA BEAR & BARREL</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup3" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -163,16 +194,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-04.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">GUATEMALA : HUAHUATENANGO</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup4" class="btn btn-primary">Detail</a>
+          <div class="filterDiv floral">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-04.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">GUATEMALA : HUAHUATENANGO</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup4" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -180,16 +213,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-05.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">MYANMAR : BLUE MOUNTAIN</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup5" class="btn btn-primary">Detail</a>
+          <div class="filterDiv floral">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-05.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">MYANMAR : BLUE MOUNTAIN</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup5" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -197,16 +232,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-06.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">COSTA RICA : FINCA CALLE LAJAS - LAS LAJAS MICROMILL</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup6" class="btn btn-primary">Detail</a>
+          <div class="filterDiv floral">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-06.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">COSTA RICA : FINCA CALLE LAJAS - LAS LAJAS MICROMILL</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup6" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -214,16 +251,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-07.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">ETHIOPIA : WEST GUJI CHERICHA G1</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup7" class="btn btn-primary">Detail</a>
+          <div class="filterDiv floral">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-07.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">ETHIOPIA : WEST GUJI CHERICHA G1</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup7" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -231,16 +270,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-08.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">ETHIOPIA : GUJI GELENA GESHA</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup8" class="btn btn-primary">Detail</a>
+          <div class="filterDiv floral">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-08.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">ETHIOPIA : GUJI GELENA GESHA</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup8" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -248,16 +289,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-09.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">CMYANMAR : SHAN WASHED PROCESS</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup9" class="btn btn-primary">Detail</a>
+          <div class="filterDiv fruity">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-09.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">MYANMAR : SHAN WASHED PROCESS</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup9" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -265,16 +308,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-10.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">COLOMBIA : SUPREMO</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup10" class="btn btn-primary">Detail</a>
+          <div class="filterDiv fruity">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-10.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">COLOMBIA : SUPREMO</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup10" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -282,16 +327,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-11.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">MYANMAR : SHAN (DRY PROCESS)</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup11" class="btn btn-primary">Detail</a>
+          <div class="filterDiv fruity">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-11.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">MYANMAR : SHAN (DRY PROCESS)</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup11" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -299,16 +346,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-13.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">THAILAND, CHAING RAI, MAE CHAN TAI</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup13" class="btn btn-primary">Detail</a>
+          <div class="filterDiv fruity">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-13.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">THAILAND, CHAING RAI, MAE CHAN TAI</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup13" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -316,16 +365,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-14.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">KENYA : KIRINYAGA</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup14" class="btn btn-primary">Detail</a>
+          <div class="filterDiv fruity">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-14.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">KENYA : KIRINYAGA</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup14" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -333,16 +384,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-15.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">INDONESIA : SUMATRA SESONGOT GAYO NATURAL</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup15" class="btn btn-primary">Detail</a>
+          <div class="filterDiv fruity">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-15.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">INDONESIA : SUMATRA SESONGOT GAYO NATURAL</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup15" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -350,16 +403,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-16.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">INDONESIA : SUMATRA SESONGOT GAYO ANAEROBIC HONEY</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup16" class="btn btn-primary">Detail</a>
+          <div class="filterDiv fruity">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-16.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">INDONESIA : SUMATRA SESONGOT GAYO ANAEROBIC HONEY</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup16" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -367,16 +422,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-17.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">BRAZIL : SANTOS</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup17" class="btn btn-primary">Detail</a>
+          <div class="filterDiv nutty">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-17.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">BRAZIL : SANTOS</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup17" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -384,16 +441,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-18.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">BRAZIL : CERRADO</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup18" class="btn btn-primary">Detail</a>
+          <div class="filterDiv nutty">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-18.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">BRAZIL : CERRADO</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup18" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -401,16 +460,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-19.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">BRAZIL : FAZENDA LAGOA SAMBA</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup19" class="btn btn-primary">Detail</a>
+          <div class="filterDiv nutty">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-19.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">BRAZIL : FAZENDA LAGOA SAMBA</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup19" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -418,16 +479,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-20.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">COLOMBIA : DECAF</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup20" class="btn btn-primary">Detail</a>
+          <div class="filterDiv nutty">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-20.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">COLOMBIA : DECAF</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup20" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -435,16 +498,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-21.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">LAOS : BOLAVEN JAVA</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup21" class="btn btn-primary">Detail</a>
+          <div class="filterDiv nutty">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-21.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">LAOS : BOLAVEN JAVA</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup21" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -452,16 +517,58 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-22.png') }}" class="img-fluid rounded-start" alt="">
+          <div class="filterDiv flonuttyral">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-22.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">LAOS : FAIMAI</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup22" class="btn btn-primary">Detail</a>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">LAOS : FAIMAI</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup22" class="btn btn-primary">Detail</a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-6">
+          <div class="filterDiv nutty">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-23.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">LAOS : BOLAVEN</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup23" class="btn btn-primary">Detail</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-6">
+          <div class="filterDiv winey">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-25.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">CHINA : YUNNAN PAO ZHANGSHA</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup25" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -469,16 +576,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-23.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">LAOS : BOLAVEN</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup23" class="btn btn-primary">Detail</a>
+          <div class="filterDiv winey">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-26.png') }}" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">CHINA : PU'ER</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup26" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -486,50 +595,18 @@
         </div>
 
         <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-25.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">CHINA : YUNNAN PAO ZHANGSHA</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup25" class="btn btn-primary">Detail</a>
+          <div class="filterDiv winey">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('template/promote/assets/img/single-origin/SO-27.png') }}" class="img-fluid rounded-start" alt="">
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-26.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">CHINA : PU'ER</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup26" class="btn btn-primary">Detail</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{asset('template/promote/assets/img/single-origin/SO-27.png') }}" class="img-fluid rounded-start" alt="">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">COMLOMBIA : ESWADOGA</h5>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
-                  <a href="#popup27" class="btn btn-primary">Detail</a>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">COMLOMBIA : ESWADOGA</h5>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#popup27" class="btn btn-primary">Detail</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1040,7 +1117,53 @@
       </div>
 
     </div>
+    <script>
+      filterSelection("all")
 
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("filterDiv");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+      }
+
+      function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
+          }
+        }
+      }
+
+      function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+        }
+        element.className = arr1.join(" ");
+      }
+
+      // Add active class to the current button (highlight it)
+      var btnContainer = document.getElementById("myBtnContainer");
+      var btns = btnContainer.getElementsByClassName("btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+    </script>
   </section>
 </main><!-- End #main -->
 @stop
