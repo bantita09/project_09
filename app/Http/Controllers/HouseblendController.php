@@ -100,29 +100,34 @@ class HouseblendController extends Controller
     {
         if ($request->hasFile('image')) {
             $houseblend = Products::find($id);
+
+            // delete image
+            if ($houseblend->image != 'nopic.png') {
+                File::delete(public_path() . '/admin/upload/hbproduct/' . $houseblend->image);
+            }
+
+            // update image
+            $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path() . '/admin/upload/hbproduct/', $filename);
+            Image::make(public_path() . '/admin/upload/hbproduct/' . $filename);
+            $houseblend->image = $filename;
+
+            // add field->have an image
             $houseblend->name = $request->name;
             $houseblend->detail = $request->detail;
             $houseblend->price = $request->price;
             $houseblend->Amount = $request->amount;
             $houseblend->id_type_product = $request->type_product;
-            $houseblend->image = $request->image;
-            if ($houseblend->image != 'nopic.png') {
-                File::delete(public_path() . '/admin/upload/hbproduct/' . $houseblend->image);
-            }
-            $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
-            $request->file('image')->move(public_path() . '/admin/upload/hbproduct/', $filename);
-            Image::make(public_path() . '/admin/upload/hbproduct/' . $filename);
-            $houseblend->image = $filename;
-           
-            
-        }
+        } else{
         
+        // add field->don't have an image
         $houseblend = Products::find($id);
         $houseblend->name = $request->name;
         $houseblend->detail = $request->detail;
         $houseblend->price = $request->price;
         $houseblend->Amount = $request->amount;
         $houseblend->id_type_product = $request->type_product;
+        }
         
         $houseblend->update();
         toast('Update Successfully', 'success');
