@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->nullable()->comment('ชื่อสินค้า');
@@ -21,10 +22,11 @@ return new class extends Migration
             $table->string('image')->comment('รูปภาพสินค้า');
             $table->integer('Amount')->nullable()->comment('จำนวนสินค้า');
             $table->integer('id_type_product')->nullable()->comment('หมวดหมู่สินค้า');
-            $table->integer('created_at')->nullable()->comment('user ที่เพิ่ม');
-            $table->integer('updated_at')->nullable()->comment('user ที่แก้ไข');
+            $table->integer('created_by')->nullable()->comment('user ที่เพิ่ม');
+            $table->integer('updated_by')->nullable()->comment('user ที่แก้ไข');
             $table->timestamps();
             $table->softDeletes();
+
         });
     }
 
