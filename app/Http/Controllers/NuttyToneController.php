@@ -27,13 +27,15 @@ class NuttyToneController extends Controller
      */
     public function index()
     {
-        $nutty = Products::all();
+
+        $nutty = Products::where('id_type_product', 4)->get();
 
         return view('adminpage.stock.nutty-tone.adminnuttytone', compact('nutty'));
 
         // $read = Products::all();
 
         // return view('adminpage.stock.nutty-tone.adminnuttytone', compact('read'));
+
     }
 
     public function formadd()
@@ -49,7 +51,8 @@ class NuttyToneController extends Controller
         $nutty->detail = $request->detail;
         $nutty->price = $request->price;
         $nutty->Amount = $request->amount;
-        $nutty->id_type_product = $request->type_product;
+        $nutty->id_type_product = 4;
+        // $nutty->id_type_product = $request->type_product;
 
         if ($request->hasFile('image')) {
             $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
@@ -98,14 +101,17 @@ class NuttyToneController extends Controller
 
     public function update(Request $request, $id)
     {
-        if ($request->hasFile('image')) {
+
+        if ($request->hasFile('image'))
+        {
+
             $nutty = Products::find($id);
             $nutty->name = $request->name;
             $nutty->detail = $request->detail;
             $nutty->price = $request->price;
             $nutty->image = $request->image;
             $nutty->Amount = $request->amount;
-            $nutty->id_type_product = $request->type_product;
+            // $nutty->id_type_product = $request->type_product;
 
             if ($nutty->image != 'nopic.png') {
                 File::delete(public_path() . '/admin/upload/nuttyproduct/' . $nutty->image);
@@ -116,16 +122,19 @@ class NuttyToneController extends Controller
             Image::make(public_path() . '/admin/upload/nuttyproduct/' . $filename);
             $nutty->image = $filename;
         }
+
         $nutty = Products::find($id);
         $nutty->name = $request->name;
         $nutty->detail = $request->detail;
         $nutty->price = $request->price;
         $nutty->Amount = $request->amount;
-        $nutty->id_type_product = $request->type_product;
+        // $nutty->id_type_product = $request->type_product;
         $nutty->save();
+
         toast('Update Successfully', 'success');
 
         return redirect()->route('adminpage.stock.nutty-tone.adminnuttytone');
+
     }
 
     // public function formedit()
@@ -149,4 +158,5 @@ class NuttyToneController extends Controller
 
     //     return redirect()->route('adminpage.stock.floral-tone.adminfloraltone');
     // }
+
 }

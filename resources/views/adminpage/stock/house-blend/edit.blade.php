@@ -73,12 +73,12 @@
                                                         <input type="number" class="form-control" name="amount" value="{{ $houseblend->Amount }}" placeholder="Product Amount">
                                                     </div>
 
-                                                    <div class="col-md-4">
+                                                    {{-- <div class="col-md-4">
                                                         <label>Type Product</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
                                                         <input type="number" class="form-control" name="type_product" value="{{ $houseblend->id_type_product }}" placeholder="Type Product">
-                                                    </div>
+                                                    </div> --}}
 
                                                     <div class="col-12 col-md-8 offset-md-4 form-group">
                                                     </div>

@@ -49,28 +49,34 @@
                                                     <th>Detail</th>
                                                     <th>Price</th>
                                                     <th>Image</th>
-                                                    <th>Amount</th> 
-                                                    <th>Type Product</th> 
-                                                    <th>Edit</th> 
-                                                    <th>Delete</th> 
+                                                    <th>Amount</th>
+                                                    <th>Type Product</th>
+                                                    <th>Edit</th>
+                                                    <th>Delete</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($nutty as $nuttyt)
-                                                <tr>
-                                                    <td class="text-bold-500">{{ $nuttyt->id }}</td>
-                                                    <td class="text-bold-500">{{ $nuttyt->name }}</td>
-                                                    <td class="text-bold-500">{{ $nuttyt->detail }}</td>
-                                                    <td class="text-bold-500">{{ $nuttyt->price }}</td>
-                                                    <td class="text-bold-500">
-                                                        <img src="{{ asset('admin/upload/nuttyproduct/'. $nuttyt->image) }}" width="100px" height="80px">
-                                                    </td>
-                                                    <td class="text-bold-500">{{ $nuttyt->Amount }}</td>
-                                                    <td class="text-bold-500">{{ $nuttyt->id_type_product }}</td>
-                                                    <td> <a href="{{url('/admin/stock/nutty-tone/edit/'. $nuttyt->id)}}" class="btn btn-warning rounded-pill">Edit</a> </td>
-                                                    <td> <a href="{{url('/admin/nuttyproduct/delete/'. $nuttyt->id)}}"  class="btn btn-danger rounded-pill">Delete</a> </td>
-                                                </tr>
-                                                @endforeach
+                                                @if ( !$nutty->isEmpty() )
+                                                    @foreach($nutty as $nuttyt)
+                                                        <tr>
+                                                            <td class="text-bold-500">{{ $nuttyt->id }}</td>
+                                                            <td class="text-bold-500">{{ $nuttyt->name }}</td>
+                                                            <td class="text-bold-500">{{ $nuttyt->detail }}</td>
+                                                            <td class="text-bold-500">{{ $nuttyt->price }}</td>
+                                                            <td class="text-bold-500">
+                                                                <img src="{{ asset('admin/upload/nuttyproduct/'. $nuttyt->image) }}" width="100px" height="80px">
+                                                            </td>
+                                                            <td class="text-bold-500">{{ $nuttyt->Amount }}</td>
+                                                            <td class="text-bold-500">{{ $nuttyt->type->name }}</td>
+                                                            <td> <a href="{{url('/admin/stock/nutty-tone/edit/'. $nuttyt->id)}}" class="btn btn-warning rounded-pill">Edit</a> </td>
+                                                            <td> <a href="{{url('/admin/nuttyproduct/delete/'. $nuttyt->id)}}"  class="btn btn-danger rounded-pill">Delete</a> </td>
+                                                        </tr>
+                                                    @endforeach
+                                                @else
+                                                    <tr>
+                                                        <td colspan="9" class="text-center">ไม่มีข้อมูล</td>
+                                                    </tr>
+                                                @endif
                                             </tbody>
                                         </table>
                                     </div>

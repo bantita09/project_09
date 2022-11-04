@@ -10,6 +10,7 @@ use Intervention\Image\Facades\Image;
 
 class WineyToneController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
@@ -27,13 +28,16 @@ class WineyToneController extends Controller
      */
     public function index()
     {
-        $winey = Products::all();
+
+        $winey = Products::where('id_type_product', 5)->get();
 
         return view('adminpage.stock.winey-tone.adminwineytone', compact('winey'));
 
         // $read = Products::all();
 
         // return view('adminpage.stock.winey-tone.adminwineytone', compact('read'));
+
+
     }
 
     public function formadd()
@@ -49,7 +53,8 @@ class WineyToneController extends Controller
         $winey->detail = $request->detail;
         $winey->price = $request->price;
         $winey->Amount = $request->amount;
-        $winey->id_type_product = $request->type_product;
+        $winey->id_type_product = 5;
+        // $winey->id_type_product = $request->type_product;
 
         if ($request->hasFile('image')) {
             $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
@@ -59,7 +64,9 @@ class WineyToneController extends Controller
         }else {
             $winey->image = 'nopic.png';
         }
+
         $winey->save();
+
         toast('Save Successfully', 'success');
 
         return redirect()->route('adminpage.stock.winey-tone.adminwineytone');
@@ -76,6 +83,7 @@ class WineyToneController extends Controller
         // Products::create($request->all());
 
         // return redirect()->route('adminpage.stock.floral-tone.adminfloraltone');
+
     }
 
     public function delete($id)
@@ -98,16 +106,20 @@ class WineyToneController extends Controller
 
     public function update(Request $request, $id)
     {
-        if ($request->hasFile('image')) {
+
+        if ($request->hasFile('image'))
+        {
+
             $winey = Products::find($id);
             $winey->name = $request->name;
             $winey->detail = $request->detail;
             $winey->price = $request->price;
             $winey->image = $request->image;
             $winey->Amount = $request->amount;
-            $winey->id_type_product = $request->type_product;
+            // $winey->id_type_product = $request->type_product;
 
-            if ($winey->image != 'nopic.png') {
+            if ($winey->image != 'nopic.png')
+            {
                 File::delete(public_path() . '/admin/upload/wineyproduct/' . $winey->image);
             }
 
@@ -115,17 +127,21 @@ class WineyToneController extends Controller
             $request->file('image')->move(public_path() . '/admin/upload/wineyproduct/', $filename);
             Image::make(public_path() . '/admin/upload/wineyproduct/' . $filename);
             $winey->image = $filename;
+
         }
+
         $winey = Products::find($id);
         $winey->name = $request->name;
         $winey->detail = $request->detail;
         $winey->price = $request->price;
         $winey->Amount = $request->amount;
-        $winey->id_type_product = $request->type_product;
+        // $winey->id_type_product = $request->type_product;
         $winey->save();
+
         toast('Update Successfully', 'success');
 
         return redirect()->route('adminpage.stock.winey-tone.adminwineytone');
+
     }
 
     // public function formedit()
@@ -149,4 +165,5 @@ class WineyToneController extends Controller
 
     //     return redirect()->route('adminpage.stock.floral-tone.adminfloraltone');
     // }
+
 }

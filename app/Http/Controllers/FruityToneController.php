@@ -27,13 +27,15 @@ class FruityToneController extends Controller
      */
     public function index()
     {
-        $fruity = Products::all();
+
+        $fruity = Products::where('id_type_product', 3)->get();
 
         return view('adminpage.stock.fruity-tone.adminfruitytone', compact('fruity'));
 
         // $read = Products::all();
 
         // return view('adminpage.stock.fruity-tone.adminfruitytone', compact('read'));
+
     }
 
     public function formadd()
@@ -49,7 +51,8 @@ class FruityToneController extends Controller
         $fruity->detail = $request->detail;
         $fruity->price = $request->price;
         $fruity->Amount = $request->amount;
-        $fruity->id_type_product = $request->type_product;
+        $fruity->id_type_product = 3;
+        // $fruity->id_type_product = $request->type_product;
 
         if ($request->hasFile('image')) {
             $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
@@ -98,14 +101,17 @@ class FruityToneController extends Controller
 
     public function update(Request $request, $id)
     {
-        if ($request->hasFile('image')) {
+
+        if ($request->hasFile('image'))
+        {
+
             $fruity = Products::find($id);
             $fruity->name = $request->name;
             $fruity->detail = $request->detail;
             $fruity->price = $request->price;
             $fruity->image = $request->image;
             $fruity->Amount = $request->amount;
-            $fruity->id_type_product = $request->type_product;
+            // $fruity->id_type_product = $request->type_product;
 
             if ($fruity->image != 'nopic.png') {
                 File::delete(public_path() . '/admin/upload/fruityproduct/' . $fruity->image);
@@ -115,17 +121,21 @@ class FruityToneController extends Controller
             $request->file('image')->move(public_path() . '/admin/upload/fruityproduct/', $filename);
             Image::make(public_path() . '/admin/upload/fruityproduct/' . $filename);
             $fruity->image = $filename;
+
         }
+
         $fruity = Products::find($id);
         $fruity->name = $request->name;
         $fruity->detail = $request->detail;
         $fruity->price = $request->price;
         $fruity->Amount = $request->amount;
-        $fruity->id_type_product = $request->type_product;
+        // $fruity->id_type_product = $request->type_product;
         $fruity->save();
+
         toast('Update Successfully', 'success');
 
         return redirect()->route('adminpage.stock.fruity-tone.adminfruitytone');
+
     }
 
     // public function formedit()
@@ -149,4 +159,5 @@ class FruityToneController extends Controller
 
     //     return redirect()->route('adminpage.stock.floral-tone.adminfloraltone');
     // }
+
 }

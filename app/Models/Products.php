@@ -12,13 +12,23 @@ class Products extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = 'products';
+
+    protected $primaryKey = 'id';
+
     protected $fillable = [
+
         'name',
         'detail',
         'price',
         'image',
         'amount',
-        'type_product',
+        'id_type_product',
+
     ];
-    protected $primaryKey = 'id';
+
+    public function type()
+    {
+        return $this->belongsTo(TypeProducts::class, 'id_type_product', 'id')->withDefault();
+    }
+
 }

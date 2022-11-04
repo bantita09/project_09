@@ -27,13 +27,15 @@ class FloralToneController extends Controller
      */
     public function index()
     {
-        $floral = Products::all();
+
+        $floral = Products::where('id_type_product', 2)->get();
 
         return view('adminpage.stock.floral-tone.adminfloraltone', compact('floral'));
 
         // $read = Products::all();
 
         // return view('adminpage.stock.floral-tone.adminfloraltone', compact('read'));
+
     }
 
     public function formadd()
@@ -49,7 +51,8 @@ class FloralToneController extends Controller
         $floral->detail = $request->detail;
         $floral->price = $request->price;
         $floral->Amount = $request->amount;
-        $floral->id_type_product = $request->type_product;
+        $floral->id_type_product = 2;
+        // $floral->id_type_product = $request->type_product;
 
         if ($request->hasFile('image')) {
             $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
@@ -98,14 +101,16 @@ class FloralToneController extends Controller
 
     public function update(Request $request, $id)
     {
+
         if ($request->hasFile('image')) {
+
             $floral = Products::find($id);
             $floral->name = $request->name;
             $floral->detail = $request->detail;
             $floral->price = $request->price;
             $floral->image = $request->image;
             $floral->Amount = $request->amount;
-            $floral->id_type_product = $request->type_product;
+            // $floral->id_type_product = $request->type_product;
 
             if ($floral->image != 'nopic.png') {
                 File::delete(public_path() . '/admin/upload/floralproduct/' . $floral->image);
@@ -116,16 +121,19 @@ class FloralToneController extends Controller
             Image::make(public_path() . '/admin/upload/floralproduct/' . $filename);
             $floral->image = $filename;
         }
+
         $floral = Products::find($id);
         $floral->name = $request->name;
         $floral->detail = $request->detail;
         $floral->price = $request->price;
         $floral->Amount = $request->amount;
-        $floral->id_type_product = $request->type_product;
+        // $floral->id_type_product = $request->type_product;
         $floral->save();
+
         toast('Update Successfully', 'success');
 
         return redirect()->route('adminpage.stock.floral-tone.adminfloraltone');
+
     }
 
     // public function formedit()
@@ -149,4 +157,5 @@ class FloralToneController extends Controller
 
     //     return redirect()->route('adminpage.stock.floral-tone.adminfloraltone');
     // }
+
 }

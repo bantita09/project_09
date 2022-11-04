@@ -11,8 +11,20 @@ class TypeProducts extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $primaryKey = "id";
+
     protected $table = 'type_product';
-    protected $fillable = [
-        'name',
+
+    protected $cast = [
+
+        'name' => 'text',
+
     ];
+
+    protected $fillable = [
+
+        'name',
+
+    ];
+
 }

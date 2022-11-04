@@ -10,6 +10,7 @@ use Intervention\Image\Facades\Image;
 
 class HouseblendController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
@@ -27,7 +28,7 @@ class HouseblendController extends Controller
      */
     public function index()
     {
-        $houseblend = Products::all();
+        $houseblend = Products::where('id_type_product', 1)->get();
 
         return view('adminpage.stock.house-blend.adminhouseblend', compact('houseblend'));
 
@@ -49,7 +50,8 @@ class HouseblendController extends Controller
         $houseblend->detail = $request->detail;
         $houseblend->price = $request->price;
         $houseblend->Amount = $request->amount;
-        $houseblend->id_type_product = $request->type_product;
+        $houseblend->id_type_product = 1;
+        // $houseblend->id_type_product = $request->type_product;
 
         if ($request->hasFile('image')) {
             $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
@@ -99,6 +101,7 @@ class HouseblendController extends Controller
     public function update(Request $request, $id)
     {
         if ($request->hasFile('image')) {
+
             $houseblend = Products::find($id);
 
             // delete image
@@ -117,22 +120,26 @@ class HouseblendController extends Controller
             $houseblend->detail = $request->detail;
             $houseblend->price = $request->price;
             $houseblend->Amount = $request->amount;
-            $houseblend->id_type_product = $request->type_product;
-        } else{
-        
-        // add field->don't have an image
-        $houseblend = Products::find($id);
-        $houseblend->name = $request->name;
-        $houseblend->detail = $request->detail;
-        $houseblend->price = $request->price;
-        $houseblend->Amount = $request->amount;
-        $houseblend->id_type_product = $request->type_product;
+            // $houseblend->id_type_product = $request->type_product;
+
+        } else {
+
+            // add field->don't have an image
+            $houseblend = Products::find($id);
+            $houseblend->name = $request->name;
+            $houseblend->detail = $request->detail;
+            $houseblend->price = $request->price;
+            $houseblend->Amount = $request->amount;
+            // $houseblend->id_type_product = $request->type_product;
+
         }
-        
+
         $houseblend->update();
+
         toast('Update Successfully', 'success');
 
         return redirect()->route('adminpage.stock.house-blend.adminhouseblend');
+
     }
 
     // public function formedit()

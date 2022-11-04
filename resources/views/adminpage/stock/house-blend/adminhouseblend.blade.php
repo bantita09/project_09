@@ -49,28 +49,34 @@
                                                     <th>Detail</th>
                                                     <th>Price</th>
                                                     <th>Image</th>
-                                                    <th>Amount</th> 
-                                                    <th>Type Product</th> 
-                                                    <th>Edit</th> 
-                                                    <th>Delete</th> 
+                                                    <th>Amount</th>
+                                                    <th>Type Product</th>
+                                                    <th>Edit</th>
+                                                    <th>Delete</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($houseblend as $hb)
-                                                <tr>
-                                                    <td class="text-bold-500">{{ $hb->id }}</td>
-                                                    <td class="text-bold-500">{{ $hb->name }}</td>
-                                                    <td class="text-bold-500">{{ $hb->detail }}</td>
-                                                    <td class="text-bold-500">{{ $hb->price }}</td>
-                                                    <td class="text-bold-500">
-                                                        <img src="{{ asset('admin/upload/hbproduct/'. $hb->image) }}" width="100px" height="80px">
-                                                    </td>
-                                                    <td class="text-bold-500">{{ $hb->Amount }}</td>
-                                                    <td class="text-bold-500">{{ $hb->id_type_product }}</td>
-                                                    <td> <a href="{{url('/admin/stock/house-blend/edit/'. $hb->id)}}" class="btn btn-warning rounded-pill">Edit</a> </td>
-                                                    <td> <a href="{{url('/admin/hbproduct/delete/'. $hb->id)}}"  class="btn btn-danger rounded-pill">Delete</a> </td>
-                                                </tr>
-                                                @endforeach
+                                                @if ( !$houseblend->isEmpty() )
+                                                    @foreach($houseblend as $hb)
+                                                        <tr>
+                                                            <td class="text-bold-500">{{ $hb->id }}</td>
+                                                            <td class="text-bold-500">{{ $hb->name }}</td>
+                                                            <td class="text-bold-500">{{ $hb->detail }}</td>
+                                                            <td class="text-bold-500">{{ $hb->price }}</td>
+                                                            <td class="text-bold-500">
+                                                                <img src="{{ asset('admin/upload/hbproduct/'. $hb->image) }}" width="100px" height="80px">
+                                                            </td>
+                                                            <td class="text-bold-500">{{ $hb->Amount }}</td>
+                                                            <td class="text-bold-500">{{ $hb->type->name }}</td>
+                                                            <td> <a href="{{url('/admin/stock/house-blend/edit/'. $hb->id)}}" class="btn btn-warning rounded-pill">Edit</a> </td>
+                                                            <td> <a href="{{url('/admin/hbproduct/delete/'. $hb->id)}}"  class="btn btn-danger rounded-pill">Delete</a> </td>
+                                                        </tr>
+                                                    @endforeach
+                                                @else
+                                                    <tr>
+                                                        <td colspan="9" class="text-center">ไม่มีข้อมูล</td>
+                                                    </tr>
+                                                @endif
                                             </tbody>
                                         </table>
                                     </div>
