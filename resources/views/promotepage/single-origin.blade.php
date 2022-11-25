@@ -1,115 +1,6 @@
 @extends('layouts.promote')
 @section('content')
 
-<style>
-  h5 {
-    font-family: "Open Sans", sans-serif;
-    font-weight: 500;
-  }
-
-  .card {
-    margin: 5px;
-    color: black;
-    font-family: "Poppins", sans-serif;
-  }
-
-  .filterDiv {
-    float: left;
-    color: #ffffff;
-    line-height: 100px;
-    margin: 2px;
-    display: none;
-  }
-
-  .show {
-    display: block;
-  }
-
-  .btn {
-    color: white;
-    background-color: #d9ba85;
-    border: #d9ba85;
-    transition-duration: 0.5s;
-    cursor: pointer;
-    margin: 5px;
-  }
-
-  .btn:hover {
-    background-color: #cda45e;
-    color: black;
-  }
-
-  .btn.active {
-    background-color: #666;
-    color: white;
-  }
-
-  .overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  .overlay:target {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .popup {
-    margin: 10%;
-    padding: 20px;
-    background: #fff;
-    border-radius: 15px;
-    width: 80%;
-    position: relative;
-    transition: all 5s ease-in-out;
-    align-items: center;
-  }
-
-  .popup h5 {
-    color: black;
-    font-size: xx-large;
-  }
-
-  .popup span {
-    color: black;
-    font-size: large;
-  }
-
-  .popup .close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    transition: all 200ms;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-  }
-
-  .popup .close:hover {
-    color: #06D85F;
-  }
-
-  .popup .content {
-    padding: 5%;
-    max-height: 75%;
-    overflow: auto;
-  }
-
-  @media screen and (max-width: 70px) {
-    .popup {
-      width: 100%;
-    }
-  }
-</style>
-
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
   <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
@@ -535,8 +426,6 @@
           </div>
         </div>
 
-
-
         <div class="col-6">
           <div class="filterDiv nutty">
             <div class="card mb-3" style="max-width: 540px;">
@@ -555,7 +444,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col-6">
           <div class="filterDiv winey">
             <div class="card mb-3" style="max-width: 540px;">
