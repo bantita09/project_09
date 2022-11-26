@@ -9,7 +9,7 @@
         <ul>
           <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
           <li><a class="nav-link scrollto" href="{{url('/house-blend')}}">House Blend</a></li>
-          <li><a class="nav-link scrollto" href="{{url('/single-origin')}}">Single Orgin</a></li>
+          <!-- <li><a class="nav-link scrollto" href="{{url('/single-origin')}}">Single Orgin</a></li> -->
           <li><a class="nav-link scrollto" href="{{url('/beverage-menu')}}">Beverage Menu</a></li>
           <li><a class="nav-link scrollto" href="{{url('/contact')}}">Contact</a></li>
 
