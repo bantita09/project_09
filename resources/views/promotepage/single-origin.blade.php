@@ -1,5 +1,44 @@
 @extends('layouts.promote')
 @section('content')
+<style>
+.filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
 
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
@@ -27,29 +66,31 @@
 
       <div class="row menu-container">
 
-        @foreach ($products as $p)
+        @foreach ($products as $sp $type_product as $tp)
             <div class="col-6 menu-item filter-starters">
+              <div class="filterdiv {{ $tp->name }}">
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="{{ asset('admin/upload/hbproduct') . '/' . $p->image }}" class="img-fluid rounded-start" alt="">
+                        <img src="{{ asset('admin/upload/hbproduct') . '/' . $sp->image }}" class="img-fluid rounded-start" alt="">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                        <h5 class="card-title">{{ $p->name }}</h5>
+                        <h5 class="card-title">{{ $sp->name }}</h5>
                         <a href="#" class="btn btn-primary">Add to Cart</a>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popup{{ $p->id }}">Detail</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popup{{ $sp->id }}">Detail</button>
                         </div>
                     </div>
                     </div>
+                </div>
                 </div>
             </div>
         @endforeach
 
         <!-- pop up -->
-        @foreach ($products as $p)
+        @foreach ($products as $sp)
         <!-- Popup detail -->
-        <div class="modal fade" id="popup{{ $p->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="popup{{ $sp->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content" style="border-radius: 15px;">
 
@@ -61,12 +102,12 @@
                         <div class="content">
                             <div class="row">
                             <div class="col-4">
-                                <img src="{{ asset('admin/upload/hbproduct') . '/' . $p->image }}" class="img-fluid rounded-start" alt="">
+                                <img src="{{ asset('admin/upload/hbproduct') . '/' . $sp->image }}" class="img-fluid rounded-start" alt="">
                             </div>
                             <div class="col-6">
-                                <h5>{{ $p->name }}</h5>
-                                <span>{{ $p->detail }}</span><br>
-                                <span>Price : {{ $p->price }}</span>
+                                <h5>{{ $sp->name }}</h5>
+                                <span>{{ $sp->detail }}</span><br>
+                                <span>Price : {{ $sp->price }}</span>
                             </div>
                             </div>
                         </div>

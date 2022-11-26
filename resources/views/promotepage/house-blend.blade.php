@@ -110,18 +110,18 @@
         <div class="container" data-aos="fade-up">
         <div class="row menu-container">
 
-            @foreach ($products as $p)
+            @foreach ($products as $hp)
                 <div class="col-6 menu-item filter-starters">
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="{{ asset('admin/upload/hbproduct') . '/' . $p->image }}" class="img-fluid rounded-start" alt="">
+                            <img src="{{ asset('admin/upload/hbproduct') . '/' . $hp->image }}" class="img-fluid rounded-start" alt="">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                            <h5 class="card-title">{{ $p->name }}</h5>
+                            <h5 class="card-title">{{ $hp->name }}</h5>
                             <a href="#" class="btn btn-primary">Add to Cart</a>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popup{{ $p->id }}">Detail</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popup{{ $hp->id }}">Detail</button>
                             </div>
                         </div>
                         </div>
@@ -133,9 +133,9 @@
         </div>
     </section>
 
-    @foreach ($products as $p)
+    @foreach ($products as $hp)
         <!-- Popup detail -->
-        <div class="modal fade" id="popup{{ $p->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="popup{{ $hp->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content" style="border-radius: 15px;">
 
@@ -147,12 +147,12 @@
                         <div class="content">
                             <div class="row">
                             <div class="col-4">
-                                <img src="{{ asset('admin/upload/hbproduct') . '/' . $p->image }}" class="img-fluid rounded-start" alt="">
+                                <img src="{{ asset('admin/upload/hbproduct') . '/' . $hp->image }}" class="img-fluid rounded-start" alt="">
                             </div>
                             <div class="col-6">
-                                <h5>{{ $p->name }}</h5>
-                                <span>{{ $p->detail }}</span><br>
-                                <span>Price : {{ $p->price }}</span>
+                                <h5>{{ $hp->name }}</h5>
+                                <span>{{ $hp->detail }}</span><br>
+                                <span>Price : {{ $hp->price }}</span>
                             </div>
                             </div>
                         </div>
