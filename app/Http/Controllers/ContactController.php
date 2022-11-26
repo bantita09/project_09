@@ -29,4 +29,9 @@ class ContactController extends Controller
         return view('adminpage.contact.admincontact', compact('read'));
     }
 
+    public function detail($id)
+    {
+        return view('adminpage.contact.detail')->with('detail', Contact::find($id));
+    }
+
 }

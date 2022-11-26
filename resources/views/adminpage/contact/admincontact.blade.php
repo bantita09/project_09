@@ -47,7 +47,7 @@
                                                     <th>Email</th>
                                                     <th>Phone</th>
                                                     <th>Message</th>
-                                                    <th>See details</th> 
+                                                    <th>See details</th>
                                                 </tr>
                                         </thead>
                                         <tbody>
@@ -57,7 +57,7 @@
                                                     <td class="text-bold-500">{{ $row->email}}</td>
                                                     <td class="text-bold-500">{{ $row->phone}}</td>
                                                     <td class="text-bold-500">{{ $row->message}}</td>
-                                                    <td> <a href="{{url('/admin/contact/detail')}}" class="btn btn-warning rounded-pill">See details</a> </td>
+                                                    <td> <a href="{{url('/admin/contact/detail/'. $row->id)}}" class="btn btn-warning rounded-pill">See details</a> </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

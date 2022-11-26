@@ -12,8 +12,8 @@
                 <div class="page-title">
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
-                            <h3>User [Edit]</h3>
-                            <p class="text-subtitle text-muted">For user to edit them list</p>
+                            <h3>Contact [Detail]</h3>
+                            <p class="text-subtitle text-muted">For see other details</p>
                         </div>
                         <div class="col-12 col-md-6 order-md-2 order-first">
                             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -29,11 +29,11 @@
                 <div class="col-md-12 col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">User</h4>
+                                    <h4 class="card-title">Contact</h4>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
-                                    <form action="{{ url('/admin/user/update/'.$read->id) }}" method="POST" class="form form-horizontal">
+                                    <form action="{{ url('/admin/contact/detail/'.$detail->id) }}" method="POST" class="form form-horizontal">
                                             @csrf
                                             <div class="form-body">
                                                 <div class="row">
@@ -41,28 +41,27 @@
                                                         <label>Name</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
-                                                        <input type="text" class="form-control" name="name" placeholder="Username">
+                                                        <input type="" class="form-control" name="name" value="{{ $detail->name }}">
                                                     </div>
 
                                                     <div class="col-md-4">
                                                         <label>Email</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
-                                                        <input type="email" class="form-control" name="email" placeholder="Email">
+                                                        <input type="email" class="form-control" name="email" value="{{ $detail->email }}" placeholder="Email">
                                                     </div>
 
                                                     <div class="col-md-4">
-                                                        <label>Password</label>
+                                                        <label>Phone</label>
                                                     </div>
                                                     <div class="col-md-8 form-group">
-                                                        <input type="password" class="form-control" name="password" placeholder="Password">
+                                                        <input type="text" class="form-control" name="phone" value="{{ $detail->phone }}" placeholder="Phone Number">
                                                     </div>
 
                                                     <div class="col-12 col-md-8 offset-md-4 form-group">
                                                     </div>
                                                     <div class="col-sm-12 d-flex justify-content-end">
-                                                        <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                                        <a href="{{ route('adminpage.user.adminuser') }}" class="btn btn-primary me-1 mb-1">Back</a>
+                                                        <a href="{{ route('adminpage.contact.admincontact') }}" class="btn btn-primary me-1 mb-1">Back</a>
                                                     </div>
                                                 </div>
                                             </div>

@@ -7,7 +7,10 @@ use App\Http\Controllers\HouseblendController;
 use App\Http\Controllers\NuttyToneController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WineyToneController;
+use App\Http\Controllers\BeverageController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HouseBlend;
+use App\Http\Controllers\SingleOrigin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,9 +32,10 @@ use Illuminate\Support\Facades\Route;
 // Start Promote
 
 Route::view('/', 'promotepage.home')->name('home');
+
 Route::get('/house-blend', [HouseBlend::class, 'index'])->name('house-blend');
-Route::view('/single-origin', 'promotepage.single-origin')->name('single-origin');
-Route::view('/beverage-menu', 'promotepage.beverage-menu')->name('beverage-menu');
+Route::get('/single-origin', [SingleOrigin::class, 'index'])->name('single-origin');
+Route::get('/beverage-menu', [BeverageController::class, 'index'])->name('beverage-menu');
 
 // Route::view('/contact', 'promotepage.contact')->name('contact');
 // Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contactpage'])->name('contact');
@@ -153,6 +157,8 @@ Route::get('/admin/promote/delete/{id}', [DetailController::class, 'delete']);
 
     //routes contact
 Route::get('/admin/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('adminpage.contact.admincontact');
+        // see detail
+Route::get('/admin/contact/detail/{id}', [ContactController::class, 'detail']);
 
 
     //routes user
