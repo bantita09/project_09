@@ -77,7 +77,7 @@
                     <div class="col-md-8">
                         <div class="card-body">
                         <h5 class="card-title">{{ $sp->name }}</h5>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <!-- <a href="#" class="btn btn-primary">Add to Cart</a> -->
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popup{{ $sp->id }}">Detail</button>
                         </div>
                     </div>

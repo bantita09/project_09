@@ -717,17 +717,7 @@ section {
   border-bottom: 5px solid #cda45e;
   transition: 0.5s;
 }
-.about .about-img:hover {
-  transform: scale(1.03);
-}
-.about .about-img:hover::before {
-  left: 10px;
-  top: 10px;
-}
-.about .about-img:hover::after {
-  right: 10px;
-  bottom: 10px;
-}
+
 .about .content h3 {
     font-family: 'Sarabun', sans-serif;
   font-weight: 600;

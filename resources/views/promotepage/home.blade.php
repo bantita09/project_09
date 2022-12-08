@@ -14,27 +14,6 @@
 
 <main id="main">
 
-  <!-- ======= About Section ======= -->
-  <section id="about" class="about">
-    <div class="container" data-aos="fade-up">
-
-      <div class="row">
-        <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
-          <div class="about-img">
-            <img src="{{asset('template/promote/assets/img/home-1.jpg') }}" alt="">
-          </div>
-        </div>
-        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-          <h3>เรื่องน่ารู้เกี่ยวกับกาแฟ</h3>
-          <p>
-            กาแฟ (Coffee) เป็นเครื่องดื่มที่ทำจากเมล็ดกาแฟคั่วซึ่งได้จากต้นกาแฟ นิยมดื่มร้อนๆ แต่สามารถดื่มแบบเย็นได้ด้วย บางครั้งนิยมใส่นมหรือครีมลงในกาแฟด้วย ในกาแฟหนึ่งถ้วยมีคาเฟอีนอยู่ประมาณ 80-140 มิลลิกรัม กาแฟเป็นเครื่องดื่มที่ได้รับความนิยมมากที่สุดในโลกชนิดหนึ่งเช่นเดียวกับชาและน้ำ นอกจากนี้กาแฟยังเป็นผลผลิตทางการเกษตรที่มีการส่งออกมากเป็นอันดับที่หกของโลก
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End About Section -->
-
   <!-- ======= New Product Section ======= -->
   <section id="why-us" class="why-us">
     <div class="container" data-aos="fade-up">
@@ -131,6 +110,27 @@
         </div>
 
       </div>
+
+        <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+        
+        <div class="col-lg-6">
+          <h3>เรื่องน่ารู้เกี่ยวกับกาแฟ</h3>
+          <p>
+            กาแฟ (Coffee) เป็นเครื่องดื่มที่ทำจากเมล็ดกาแฟคั่วซึ่งได้จากต้นกาแฟ นิยมดื่มร้อนๆ แต่สามารถดื่มแบบเย็นได้ด้วย บางครั้งนิยมใส่นมหรือครีมลงในกาแฟด้วย ในกาแฟหนึ่งถ้วยมีคาเฟอีนอยู่ประมาณ 80-140 มิลลิกรัม กาแฟเป็นเครื่องดื่มที่ได้รับความนิยมมากที่สุดในโลกชนิดหนึ่งเช่นเดียวกับชาและน้ำ นอกจากนี้กาแฟยังเป็นผลผลิตทางการเกษตรที่มีการส่งออกมากเป็นอันดับที่หกของโลก
+          </p>
+        </div>
+
+        <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+            <img src="{{asset('template/promote/assets/img/home-1.jpg') }}" style="height: 400px;">
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Section -->
 
     </div>
   </section>
