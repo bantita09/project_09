@@ -66,13 +66,13 @@
 
       <div class="row menu-container">
 
-        @foreach ($products as $sp $type_product as $tp)
+        @foreach ($products as $sp )
             <div class="col-6 menu-item filter-starters">
-              <div class="filterdiv {{ $tp->name }}">
+              <div class="filterdiv {{ $sp->name }}">
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="{{ asset('admin/upload/hbproduct') . '/' . $sp->image }}" class="img-fluid rounded-start" alt="">
+                        <img src="{{ asset('admin/upload/floralproduct') . '/' . $sp->image }}" class="img-fluid rounded-start" alt="">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -102,7 +102,7 @@
                         <div class="content">
                             <div class="row">
                             <div class="col-4">
-                                <img src="{{ asset('admin/upload/hbproduct') . '/' . $sp->image }}" class="img-fluid rounded-start" alt="">
+                                <img src="{{ asset('admin/upload/floralproduct') . '/' . $sp->image }}" class="img-fluid rounded-start" alt="">
                             </div>
                             <div class="col-6">
                                 <h5>{{ $sp->name }}</h5>

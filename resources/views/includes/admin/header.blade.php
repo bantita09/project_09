@@ -46,12 +46,12 @@
                             </ul>
                         </li>
 
-                        <li class="sidebar-item  ">
+                        {{-- <li class="sidebar-item  ">
                             <a href="{{url('/admin/order')}}" class="sidebar-link">
                                 <i class="bi bi-file-earmark-spreadsheet-fill"></i>
                                 <span>Order</span>
                             </a>
-                        </li>
+                        </li> --}}
 
                         <li class="sidebar-item  ">
                             <a href="{{url('/admin/detail')}}" class="sidebar-link">
